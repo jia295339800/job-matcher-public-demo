@@ -38,6 +38,18 @@ class RefreshStateTest(unittest.TestCase):
         self.assertNotIn("boss", raw.lower())
         self.assertNotIn("token", raw.lower())
 
+    def test_public_jobs_keep_details_marks_and_source_links(self):
+        public = json.loads((ROOT / "docs" / "public_jobs.json").read_text(encoding="utf-8"))
+        jobs = public["jobs"]
+        refreshed = [job for batch in public["refresh_batches"] for job in batch]
+        self.assertGreaterEqual(len(jobs), 20)
+        self.assertTrue(all(job.get("jd") for job in jobs))
+        self.assertTrue(all(job.get("source_urls") for job in jobs))
+        self.assertTrue(all(source.get("url", "").startswith(("http://", "https://")) for job in jobs for source in job["source_urls"]))
+        marks = {job.get("user_mark") for job in jobs + refreshed}
+        self.assertIn("good", marks)
+        self.assertIn("bad", marks)
+
 
 if __name__ == "__main__":
     unittest.main()

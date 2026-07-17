@@ -3,137 +3,239 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Job Matcher · 脱敏演示</title>
+  <title>Job Matcher · 真实岗位数据演示</title>
   <style>
     :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
     * { box-sizing: border-box; }
     body { margin: 0; background: #f5f7fb; color: #1f2937; }
     header { background: #111827; color: white; padding: 20px 28px; }
     header h1 { margin: 0 0 6px; font-size: 22px; }
-    header p { margin: 0; color: #cbd5e1; font-size: 13px; }
-    main { display: grid; grid-template-columns: minmax(300px, 38%) 1fr; min-height: calc(100vh - 92px); }
-    aside { background: white; border-right: 1px solid #e5e7eb; padding: 18px; }
-    .toolbar { display: flex; gap: 8px; margin-bottom: 14px; }
-    button { border: 0; border-radius: 7px; padding: 9px 13px; cursor: pointer; font-size: 13px; }
-    button.primary { background: #2563eb; color: white; }
-    button.secondary { background: #e5e7eb; color: #374151; }
-    #status { min-height: 20px; color: #64748b; font-size: 12px; margin-bottom: 12px; }
-    .summary { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+    header p { margin: 0; color: #cbd5e1; font-size: 13px; line-height: 1.6; }
+    main { display: grid; grid-template-columns: minmax(360px, 42%) 1fr; min-height: calc(100vh - 96px); }
+    aside { background: white; border-right: 1px solid #e5e7eb; padding: 16px; min-width: 0; }
+    .toolbar, .filters, .summary { display: flex; gap: 8px; flex-wrap: wrap; }
+    .toolbar { margin-bottom: 12px; }
+    button, input, select { border: 1px solid #dbe2ea; border-radius: 7px; padding: 8px 10px; font-size: 12px; }
+    button { cursor: pointer; }
+    button.primary { background: #2563eb; border-color: #2563eb; color: white; }
+    button.secondary { background: #f1f5f9; color: #374151; }
+    button:hover { filter: brightness(.98); }
+    button:disabled { cursor: wait; opacity: .6; }
+    input { flex: 1 1 170px; min-width: 0; }
+    select { background: white; color: #374151; }
+    #status { min-height: 20px; color: #64748b; font-size: 12px; margin: 6px 0 10px; }
+    .summary { margin: 12px 0; }
     .pill { background: #eef2ff; color: #4338ca; padding: 5px 9px; border-radius: 999px; font-size: 12px; }
     .pill.new { background: #dcfce7; color: #15803d; }
+    .pill.good { background: #dcfce7; color: #15803d; }
+    .pill.bad { background: #fee2e2; color: #b91c1c; }
+    .source-note { margin: 8px 0 12px; color: #64748b; font-size: 11px; line-height: 1.6; }
     .job-list { display: grid; gap: 9px; }
-    .job { position: relative; padding: 13px; border: 1px solid #e5e7eb; border-radius: 10px; background: #fff; cursor: pointer; }
+    .job { position: relative; padding: 12px; border: 1px solid #e5e7eb; border-radius: 10px; background: #fff; cursor: pointer; transition: .15s ease; }
     .job:hover, .job.selected { border-color: #93c5fd; box-shadow: 0 4px 14px #dbeafe; }
-    .job h3 { margin: 0 0 5px; font-size: 14px; padding-right: 48px; }
-    .job .company { color: #64748b; font-size: 12px; }
-    .job .meta { color: #475569; font-size: 12px; margin-top: 8px; }
-    .badge { position: absolute; top: 11px; right: 11px; padding: 3px 6px; border-radius: 5px; font-size: 10px; font-weight: 700; }
+    .job.viewed { opacity: .62; }
+    .job.viewed.mark-good { opacity: 1; }
+    .job-row { display: flex; align-items: flex-start; gap: 10px; }
+    .job-main { flex: 1; min-width: 0; }
+    .job h3 { margin: 0 0 5px; font-size: 14px; line-height: 1.4; }
+    .job .company { color: #64748b; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .job .meta { color: #475569; font-size: 11px; margin-top: 7px; line-height: 1.5; }
+    .job .snippet { color: #64748b; font-size: 11px; line-height: 1.5; margin-top: 7px; }
+    .score { flex: 0 0 42px; width: 42px; height: 42px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; color: #fff; font-weight: 700; font-size: 14px; }
+    .score.high { background: #16a34a; } .score.mid { background: #eab308; } .score.low { background: #f97316; } .score.very-low { background: #ef4444; }
+    .mark-buttons { display: flex; flex-direction: column; gap: 4px; flex: 0 0 26px; }
+    .mark-btn { width: 26px; height: 26px; padding: 0; border-color: transparent; background: #f1f5f9; color: #94a3b8; font-weight: 700; }
+    .mark-btn.good.active { background: #16a34a; color: #fff; border-color: #16a34a; }
+    .mark-btn.bad.active { background: #dc2626; color: #fff; border-color: #dc2626; }
+    .badge { display: inline-block; padding: 2px 6px; border-radius: 5px; font-size: 10px; font-weight: 700; vertical-align: 2px; }
     .badge.new { background: #dcfce7; color: #15803d; }
-    .score { float: right; color: #2563eb; font-weight: 700; }
-    section.detail { padding: 30px; }
+    .badge.good { background: #dcfce7; color: #15803d; } .badge.bad { background: #fee2e2; color: #b91c1c; }
+    .tag { display: inline-block; margin: 3px 3px 0 0; padding: 3px 6px; border-radius: 5px; background: #eff6ff; color: #2563eb; font-size: 10px; }
+    section.detail { padding: 26px 30px; min-width: 0; }
     .empty { color: #94a3b8; margin-top: 70px; text-align: center; }
-    .detail-card { max-width: 760px; background: white; border-radius: 14px; padding: 25px; box-shadow: 0 4px 18px #e2e8f0; }
-    .detail-card h2 { margin: 0 0 7px; font-size: 24px; }
-    .detail-card .sub { color: #64748b; margin-bottom: 22px; }
-    .detail-card h4 { margin: 20px 0 8px; font-size: 13px; color: #475569; }
-    ul { margin: 6px 0; padding-left: 20px; line-height: 1.8; font-size: 13px; }
-    .notice { margin-top: 20px; padding: 10px 12px; background: #eff6ff; color: #1d4ed8; border-radius: 8px; font-size: 12px; }
-    .source-note { margin: 0 0 12px; color: #64748b; font-size: 12px; line-height: 1.6; }
-    @media (max-width: 760px) { main { display: block; } aside { border-right: 0; border-bottom: 1px solid #e5e7eb; } section.detail { padding: 18px; } }
+    .detail-card { max-width: 980px; background: white; border-radius: 14px; padding: 24px; box-shadow: 0 4px 18px #e2e8f0; }
+    .detail-head { display: flex; align-items: flex-start; gap: 14px; }
+    .detail-card h2 { margin: 0 0 6px; font-size: 23px; line-height: 1.35; }
+    .detail-card .sub { color: #64748b; margin-bottom: 12px; font-size: 13px; line-height: 1.6; }
+    .detail-card h4 { margin: 20px 0 8px; font-size: 12px; color: #475569; text-transform: uppercase; letter-spacing: .04em; }
+    .detail-card h5 { margin: 0 0 7px; font-size: 11px; color: #64748b; }
+    .detail-card p, .detail-card li { font-size: 12px; line-height: 1.7; }
+    ul { margin: 6px 0; padding-left: 20px; }
+    .panel { border-radius: 11px; padding: 13px; background: #f8fafc; }
+    .panel.green { background: #f0fdf4; } .panel.orange { background: #fff7ed; } .panel.blue { background: #eff6ff; }
+    .grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .kv { display: flex; justify-content: space-between; gap: 12px; font-size: 12px; line-height: 1.8; }
+    .kv span:first-child { color: #64748b; } .kv span:last-child { text-align: right; }
+    .score-list { display: grid; gap: 3px; }
+    .score-list .kv { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .section-divider { margin-top: 20px; padding-top: 16px; border-top: 1px solid #e5e7eb; }
+    .source-links { display: flex; gap: 7px; flex-wrap: wrap; align-items: center; }
+    .source-links a { color: #2563eb; font-size: 11px; padding: 4px 7px; border-radius: 6px; background: #eff6ff; text-decoration: none; }
+    .source-links a:hover { text-decoration: underline; }
+    .apply-link { margin-left: auto; color: #fff !important; background: #2563eb !important; padding: 8px 12px !important; font-size: 12px !important; }
+    .notice { margin-top: 15px; padding: 10px 12px; background: #eff6ff; color: #1d4ed8; border-radius: 8px; font-size: 11px; line-height: 1.6; }
+    .warning { padding: 9px 11px; background: #fffbeb; color: #a16207; border: 1px solid #fde68a; border-radius: 8px; font-size: 11px; line-height: 1.6; }
+    .good-text { color: #15803d; } .bad-text { color: #b91c1c; } .muted { color: #94a3b8; }
+    @media (max-width: 920px) { main { display: block; } aside { border-right: 0; border-bottom: 1px solid #e5e7eb; } section.detail { padding: 18px; } }
+    @media (max-width: 560px) { .grid2 { grid-template-columns: 1fr; } .detail-head { gap: 9px; } .detail-card { padding: 17px; } }
   </style>
 </head>
 <body>
   <header>
-    <h1>Job Matcher Demo</h1>
-    <p>GitHub Pages 脱敏演示版 · 增量去重 · NEW 标签 · 无需本地服务或 LLM</p>
+    <h1>Job Matcher · 真实岗位数据演示</h1>
+    <p>脱敏展示版：岗位详情、匹配证据、来源链接和用户标记均来自本地 Job Matcher 数据；不包含简历、登录态或授权 token。</p>
   </header>
   <main>
     <aside>
       <div class="toolbar">
         <button id="refresh" class="primary">刷新岗位</button>
         <button id="reset" class="secondary">重置演示</button>
+        <button id="export" class="secondary">复制标记 JSON</button>
       </div>
-      <p class="source-note">这是一个可公开展示的静态 Demo。岗位均为虚构数据；刷新按钮在浏览器内模拟获取下一批岗位。</p>
+      <div class="filters">
+        <input id="search" placeholder="搜索岗位、公司、技能…" aria-label="搜索岗位">
+        <select id="sort" aria-label="排序"><option value="score">按匹配分</option><option value="date">按日期</option><option value="new">NEW 优先</option></select>
+        <select id="mark-filter" aria-label="标记筛选"><option value="all">全部标记</option><option value="good">✓ 已打勾</option><option value="bad">✕ 已打叉</option><option value="none">未标记</option><option value="new">本次 NEW</option></select>
+      </div>
       <div id="status"></div>
       <div class="summary">
-        <span id="new-count" class="pill new">新增 0</span>
+        <span id="new-count" class="pill new">NEW 0</span>
+        <span id="good-count" class="pill good">✓ 0</span>
+        <span id="bad-count" class="pill bad">✕ 0</span>
         <span id="total-count" class="pill">共 0 个职位</span>
       </div>
+      <p class="source-note">打勾/打叉会保存在当前浏览器的 localStorage；“复制标记 JSON”可把当前筛选结果交给后续 Job Matcher 流程。点击岗位后会记录为已看，已看岗位会适度灰化。</p>
       <div id="jobs" class="job-list"></div>
     </aside>
-    <section class="detail">
-      <div id="detail" class="empty">选择左侧岗位查看详情</div>
-    </section>
+    <section class="detail"><div id="detail" class="empty">选择左侧岗位查看完整详情</div></section>
   </main>
   <script>
-    // The public page intentionally embeds only fake jobs. The production app
-    // replaces this fixture with Liepin/BOSS/MCP/API adapters on the server.
-    const fixture = {
-      seed: [
-        { id: "seed-001", title: "AI 客服产品经理", company: "示例智能服务公司", location: "深圳", salary: "30-45K·14薪", source: "mock-source", score: 88, recommendation: "apply", strengths: ["智能客服工作台经验可迁移", "有 B 端流程和人机协同经验"], gaps: ["需核验语音交互经验"] },
-        { id: "seed-002", title: "销售提效产品经理", company: "示例企业服务公司", location: "深圳", salary: "28-42K·16薪", source: "mock-source", score: 84, recommendation: "apply", strengths: ["客户经营和任务编排经验", "有可量化业务结果"], gaps: ["Agent 平台经验需要补充"] },
-        { id: "seed-003", title: "保险科技业务产品经理", company: "示例保险科技公司", location: "深圳", salary: "25-40K·14薪", source: "mock-source", score: 81, recommendation: "apply", strengths: ["保险业务理解直接匹配", "熟悉流程数字化和运营配置"], gaps: ["需确认具体业务线"] },
-        { id: "seed-004", title: "企业 AI 应用产品经理", company: "示例数字化公司", location: "广州/深圳", salary: "25-38K·14薪", source: "mock-source", score: 76, recommendation: "stretch", strengths: ["有流程自动化和 AI 工作流实践"], gaps: ["企业级 Agent 平台经验较少"] }
-      ],
-      batches: [
-        [
-          { id: "seed-002", title: "销售提效产品经理", company: "示例企业服务公司", location: "深圳", salary: "28-42K·16薪", source: "mock-source", score: 84, recommendation: "apply", strengths: ["客户经营和任务编排经验", "有可量化业务结果"], gaps: ["Agent 平台经验需要补充"] },
-          { id: "new-005", title: "AI 保险运营产品经理", company: "示例健康险科技公司", location: "深圳", salary: "30-50K·14薪", source: "mock-refresh-1", score: 82, recommendation: "apply", strengths: ["保险运营和 AI 应用方向匹配"], gaps: ["需确认 Agent 落地深度"] }
-        ],
-        [
-          { id: "seed-003", title: "保险科技业务产品经理", company: "示例保险科技公司", location: "深圳", salary: "25-40K·14薪", source: "mock-source", score: 81, recommendation: "apply", strengths: ["保险业务理解直接匹配", "熟悉流程数字化和运营配置"], gaps: ["需确认具体业务线"] },
-          { id: "new-006", title: "智能作业平台产品经理", company: "示例 B 端平台公司", location: "深圳", salary: "32-48K·15薪", source: "mock-refresh-2", score: 86, recommendation: "apply", strengths: ["作业平台和规则编排经验匹配"], gaps: ["需要了解客户试点职责"] }
-        ],
-        [
-          { id: "new-007", title: "AI Agent 业务产品经理", company: "示例智能工作流公司", location: "远程/深圳", salary: "35-55K·14薪", source: "mock-refresh-3", score: 74, recommendation: "stretch", strengths: ["有工作流编排和人机协同实践"], gaps: ["缺少企业级 Agent 平台规模化案例"] }
-        ]
-      ]
-    };
-
-    let jobs = []; let batchIndex = 0; let selectedId = null;
+    const state = { jobs: [], initial: [], batches: [], refreshIndex: 0, selectedId: null, viewed: new Set(), marks: {}, filters: { query: "", sort: "score", mark: "all" } };
     const $ = (id) => document.getElementById(id);
-    const esc = (value) => String(value ?? "").replace(/[&<>\"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" }[ch]));
     const clone = (value) => JSON.parse(JSON.stringify(value));
+    const esc = (value) => String(value ?? "").replace(/[&<>\"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" }[ch]));
+    const arr = (value) => Array.isArray(value) ? value : (value ? [value] : []);
+    const keyOf = (job) => job.key || job.id || `${job.company || ""}|${job.title || ""}`;
+    const scoreClass = (score) => score >= 80 ? "high" : score >= 60 ? "mid" : score >= 40 ? "low" : "very-low";
+    const score = (value) => value == null ? "?" : Math.round(Number(value));
+    const markOf = (job) => state.marks[keyOf(job)] || "";
+    const saveMarks = () => localStorage.setItem("jm_demo_marks", JSON.stringify(state.marks));
+    const saveViewed = () => localStorage.setItem("jm_demo_viewed", JSON.stringify([...state.viewed]));
+    const listHtml = (items, empty = "未提供") => arr(items).length ? `<ul>${arr(items).map((item) => `<li>${esc(item)}</li>`).join("")}</ul>` : `<p class="muted">${esc(empty)}</p>`;
+    const tagsHtml = (items) => arr(items).map((item) => `<span class="tag">${esc(item)}</span>`).join("");
+    const recText = (value) => ({ strong_apply: "强匹配", apply: "可投", stretch_apply: "冲刺", low_priority: "低优先级", lead: "线索", skip: "跳过" }[value] || value || "待判断");
 
-    function merge(incoming) {
-      jobs = jobs.map((job) => ({ ...job, status: "existing" }));
-      const byId = new Map(jobs.map((job) => [job.id, job]));
-      incoming.forEach((candidate) => {
-        if (byId.has(candidate.id)) Object.assign(byId.get(candidate.id), { ...candidate, status: "existing" });
-        else { const job = { ...candidate, status: "new" }; jobs.push(job); byId.set(job.id, job); }
+    function init(data) {
+      state.initial = clone(data.jobs || []);
+      state.jobs = clone(state.initial);
+      state.batches = clone(data.refresh_batches || []);
+      try { state.marks = JSON.parse(localStorage.getItem("jm_demo_marks") || "{}"); } catch (_) { state.marks = {}; }
+      try { state.viewed = new Set(JSON.parse(localStorage.getItem("jm_demo_viewed") || "[]")); } catch (_) { state.viewed = new Set(); }
+      state.jobs.forEach((job) => { if (job.user_mark && !state.marks[keyOf(job)]) state.marks[keyOf(job)] = job.user_mark; });
+      saveMarks();
+      render();
+      $("status").textContent = `已载入 ${state.jobs.length} 条公开岗位记录；详情可点击来源链接核验。`;
+    }
+
+    function getVisibleJobs() {
+      const q = state.filters.query.trim().toLowerCase();
+      let list = state.jobs.filter((job) => {
+        const text = [job.title, job.company, job.location, job.salary, job.snippet, ...arr(job.matched_keywords), ...arr(job.jd && job.jd.required_skills)].join(" ").toLowerCase();
+        if (q && !text.includes(q)) return false;
+        const mark = markOf(job);
+        if (state.filters.mark === "new" && job.status !== "new") return false;
+        if (state.filters.mark === "none" && mark) return false;
+        if (["good", "bad"].includes(state.filters.mark) && mark !== state.filters.mark) return false;
+        return true;
       });
+      list.sort((a, b) => {
+        if (state.filters.sort === "date") return String(b.date_posted || b.first_seen || "").localeCompare(String(a.date_posted || a.first_seen || ""));
+        if (state.filters.sort === "new") return Number(b.status === "new") - Number(a.status === "new") || (b.score || 0) - (a.score || 0);
+        return (b.score || 0) - (a.score || 0);
+      });
+      return list;
     }
 
     function render() {
-      const fresh = jobs.filter((job) => job.status === "new");
-      $("new-count").textContent = `新增 ${fresh.length}`;
-      $("total-count").textContent = `共 ${jobs.length} 个职位`;
-      $("jobs").innerHTML = jobs.map((job) => `
-        <article class="job ${job.id === selectedId ? "selected" : ""}" data-id="${esc(job.id)}">
-          ${job.status === "new" ? '<span class="badge new">NEW</span>' : ""}
-          <h3>${esc(job.title)} <span class="score">${esc(job.score)}</span></h3>
-          <div class="company">${esc(job.company)} · ${esc(job.location)}</div>
-          <div class="meta">${esc(job.salary)} · ${esc(job.recommendation)}</div>
-        </article>`).join("");
-      document.querySelectorAll(".job").forEach((el) => el.addEventListener("click", () => { selectedId = el.dataset.id; render(); renderDetail(jobs.find((job) => job.id === selectedId)); }));
-      if (selectedId && jobs.some((job) => job.id === selectedId)) renderDetail(jobs.find((job) => job.id === selectedId));
-      else if (jobs.length) { selectedId = jobs[0].id; renderDetail(jobs[0]); }
+      const fresh = state.jobs.filter((job) => job.status === "new").length;
+      const good = state.jobs.filter((job) => markOf(job) === "good").length;
+      const bad = state.jobs.filter((job) => markOf(job) === "bad").length;
+      $("new-count").textContent = `NEW ${fresh}`; $("good-count").textContent = `✓ ${good}`; $("bad-count").textContent = `✕ ${bad}`; $("total-count").textContent = `共 ${state.jobs.length} 个职位`;
+      const visible = getVisibleJobs();
+      $("jobs").innerHTML = visible.length ? visible.map(card).join("") : `<p class="muted">没有符合当前筛选条件的岗位。</p>`;
+      document.querySelectorAll(".job").forEach((el) => el.addEventListener("click", () => viewJob(el.dataset.id)));
+      document.querySelectorAll(".mark-btn").forEach((el) => el.addEventListener("click", (event) => { event.stopPropagation(); markJob(el.dataset.id, el.dataset.mark); }));
+      if (state.selectedId) renderDetail(state.jobs.find((job) => keyOf(job) === state.selectedId));
     }
 
-    function renderDetail(job) {
-      if (!job) { $("detail").className = "empty"; $("detail").textContent = "选择左侧岗位查看详情"; return; }
-      $("detail").className = "detail-card";
-      $("detail").innerHTML = `<h2>${esc(job.title)}</h2><div class="sub">${esc(job.company)} · ${esc(job.location)} · ${esc(job.salary)}</div><h4>匹配优势</h4><ul>${(job.strengths || []).map((item) => `<li>${esc(item)}</li>`).join("")}</ul><h4>待核验/待补充</h4><ul>${(job.gaps || []).map((item) => `<li>${esc(item)}</li>`).join("")}</ul><div class="notice">来源：${esc(job.source)} · 当前状态：${job.status === "new" ? "本次新增" : "历史职位"}</div>`;
+    function card(job) {
+      const key = keyOf(job); const mark = markOf(job); const viewed = state.viewed.has(key); const selected = state.selectedId === key;
+      return `<article class="job ${viewed ? "viewed" : ""} ${mark === "good" ? "mark-good" : ""} ${selected ? "selected" : ""}" data-id="${esc(key)}">
+        <div class="job-row"><span class="score ${scoreClass(job.score)}">${score(job.score)}</span><div class="job-main"><h3>${esc(job.title)} ${job.status === "new" ? '<span class="badge new">NEW</span>' : ""} ${mark === "good" ? '<span class="badge good">✓</span>' : mark === "bad" ? '<span class="badge bad">✕</span>' : ""}</h3><div class="company">${esc(job.company)}${job.location ? ` · ${esc(job.location)}` : ""}</div><div class="meta">${esc(job.salary || "薪资未披露")} · ${esc(recText(job.recommendation))} · ${esc(job.audit_level || "")}</div><div class="snippet">${esc(job.snippet || "暂无摘要")}</div><div>${tagsHtml((job.matched_keywords || []).slice(0, 4))}</div></div><div class="mark-buttons"><button class="mark-btn good ${mark === "good" ? "active" : ""}" data-id="${esc(key)}" data-mark="good" title="标记为合适">✓</button><button class="mark-btn bad ${mark === "bad" ? "active" : ""}" data-id="${esc(key)}" data-mark="bad" title="标记为不合适">✕</button></div></div></article>`;
     }
 
-    function reset() { jobs = clone(fixture.seed).map((job) => ({ ...job, status: "new" })); batchIndex = 0; selectedId = null; $("status").textContent = "已重置为演示初始数据"; render(); }
+    function markJob(id, type) {
+      const job = state.jobs.find((item) => keyOf(item) === id); if (!job) return;
+      if (state.marks[id] === type) delete state.marks[id]; else state.marks[id] = type;
+      saveMarks(); render(); renderDetail(job); $("status").textContent = `${type === "good" ? "已打勾" : "已打叉"}：${job.title}`;
+    }
+
+    function viewJob(id) {
+      state.selectedId = id; state.viewed.add(id); saveViewed(); render(); renderDetail(state.jobs.find((job) => keyOf(job) === id));
+    }
+
+    function mergeBatch(incoming) {
+      state.jobs = state.jobs.map((job) => ({ ...job, status: "existing" }));
+      const byId = new Map(state.jobs.map((job) => [keyOf(job), job]));
+      incoming.forEach((candidate) => {
+        const id = keyOf(candidate);
+        if (byId.has(id)) Object.assign(byId.get(id), { ...candidate, status: "existing" });
+        else { const job = { ...candidate, status: "new" }; state.jobs.push(job); byId.set(id, job); }
+      });
+    }
+
     function refresh() {
-      if (batchIndex >= fixture.batches.length) { $("status").textContent = "演示批次已用完；点击“重置演示”重新开始"; return; }
-      merge(clone(fixture.batches[batchIndex++]));
-      $("status").textContent = `刷新完成 · 第 ${batchIndex} 次 · 旧标签已清除，新职位标记为 NEW`;
-      render();
+      if (state.refreshIndex >= state.batches.length) { $("status").textContent = "演示刷新批次已用完；点击“重置演示”重新开始。"; return; }
+      const batch = state.batches[state.refreshIndex++]; mergeBatch(batch); render();
+      $("status").textContent = `刷新完成 · 第 ${state.refreshIndex} 次 · 旧 NEW 已清除，本次首次出现岗位已标记 NEW。`;
     }
-    $("refresh").addEventListener("click", refresh); $("reset").addEventListener("click", reset); reset();
+
+    function resetDemo() {
+      state.jobs = clone(state.initial); state.refreshIndex = 0; state.selectedId = null; render();
+      $("status").textContent = "已重置岗位批次；浏览器内的打勾/打叉标记仍保留。";
+    }
+
+    function exportMarks() {
+      const payload = { marks: state.marks, viewed: [...state.viewed], exported_at: new Date().toISOString(), note: "good=打勾(感兴趣) bad=打叉(剔除) 无键=未置可否" };
+      const text = JSON.stringify(payload, null, 2);
+      navigator.clipboard && navigator.clipboard.writeText ? navigator.clipboard.writeText(text).then(() => { $("status").textContent = "已复制当前标记 JSON。"; }).catch(() => fallbackCopy(text)) : fallbackCopy(text);
+    }
+    function fallbackCopy(text) { const ta = document.createElement("textarea"); ta.value = text; document.body.appendChild(ta); ta.select(); try { document.execCommand("copy"); $("status").textContent = "已复制当前标记 JSON。"; } catch (_) { $("status").textContent = "复制失败，请手动查看浏览器存储。"; } ta.remove(); }
+
+    function evidenceLabel(value) { return value >= 1 ? "直接" : value >= .6 ? "相邻" : value >= .3 ? "理解" : "无"; }
+    function renderDetail(job) {
+      if (!job) { $("detail").className = "empty"; $("detail").textContent = "选择左侧岗位查看完整详情"; return; }
+      $("detail").className = "detail-card";
+      const jd = job.jd || {}; const audit = job.audit || {}; const external = job.external_interface || {};
+      const sourceLinks = arr(job.source_urls).map((source) => `<a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.source || "查看来源 JD")}</a>`).join("");
+      const critical = arr(audit.critical_must_have).map((item) => `<li class="kv"><span>${esc(item.req)}</span><span>${esc(evidenceLabel(Number(item.evidence)))} · ${esc(item.evidence)}</span></li>`).join("");
+      const extLevel = external.external_interface_level != null ? `${esc(external.external_interface_level)} · ${esc(["纯内部系统","一线用户协作","客户试点/POC","方案共创/客户成功","纯售前/BD"][external.external_interface_level] || "待核验")}` : "待核验";
+      $("detail").innerHTML = `<div class="detail-head"><span class="score ${scoreClass(job.score)}">${score(job.score)}</span><div><h2>${esc(job.title)}</h2><div class="sub">${esc(job.company)}${job.location ? ` · ${esc(job.location)}` : ""}${job.salary ? ` · ${esc(job.salary)}` : ""}<br>匹配建议：<strong>${esc(recText(job.recommendation))}</strong> · ${esc(job.audit_level || "待判断")} · ${job.status === "new" ? "本次 NEW" : "历史记录"}</div><div>${tagsHtml(job.matched_keywords)}</div></div></div>
+        <div class="panel blue" style="margin-top:16px"><h4>岗位摘要</h4><p>${esc(job.snippet || "暂无岗位摘要。")}</p></div>
+        <div class="grid2 section-divider"><div class="panel"><h4>基本信息</h4><div class="kv"><span>发布日期</span><span>${esc(job.date_posted || "未披露")}</span></div><div class="kv"><span>工作方式</span><span>${esc(jd.work_mode || "未披露")}</span></div><div class="kv"><span>经验要求</span><span>${esc(jd.years_required ?? "未披露")}</span></div><div class="kv"><span>岗位类型</span><span>${esc(jd.job_type || "未披露")}</span></div><div class="kv"><span>来源等级</span><span>${esc(job.source_class_eff || "未标注")}</span></div><div class="kv"><span>核验状态</span><span>${job.verified === true ? "已核验" : "待核验"}</span></div></div><div class="panel"><h4>匹配分解</h4><div class="score-list"><div class="kv"><span>方向</span><span>${score(job.title_score)}</span></div><div class="kv"><span>技能/方法</span><span>${score(job.skills_score)}</span></div><div class="kv"><span>必备覆盖</span><span>${score(job.must_have_score)}</span></div><div class="kv"><span>资历</span><span>${score(job.seniority_score)}</span></div><div class="kv"><span>地点</span><span>${score(job.location_score)}</span></div><div class="kv"><strong>综合分</strong><strong>${score(job.score)}</strong></div></div><p class="muted">薪资闸门：${esc(job.salary_gate || "未标注")}</p></div></div>
+        <div class="grid2 section-divider"><div><h4>匹配优势</h4><div class="panel green">${listHtml(job.strengths)}</div></div><div><h4>风险/短板</h4><div class="panel orange">${listHtml(job.weaknesses)}</div></div></div>
+        <div class="grid2 section-divider"><div><h4>必备要求</h4>${listHtml(jd.must_have)}</div><div><h4>加分项</h4>${listHtml(jd.good_to_have)}</div></div>
+        <div class="section-divider"><h4>要求技能</h4><div>${tagsHtml(jd.required_skills)}</div></div>
+        <div class="section-divider"><h4>匹配审计</h4><div class="grid2"><div class="panel"><div class="kv"><span>直接匹配经历</span><span>${esc(arr(audit.direct_experience).join("；") || "—")}</span></div><div class="kv"><span>建议简历</span><span>${esc(audit.resume_version || "—")}</span></div><div class="kv"><span>投递渠道</span><span>${esc(audit.channel || "—")}</span></div><div class="kv"><span>是否值得投</span><span class="${audit.worth ? "good-text" : "bad-text"}">${audit.worth ? "值得(试)" : "暂不建议"}</span></div></div><div class="panel"><h5>核心硬门槛证据</h5><ul>${critical || '<li class="muted">未提供证据明细</li>'}</ul></div></div><div style="margin-top:10px"><strong class="bad-text">关键缺口：</strong>${esc(arr(audit.hard_gaps).join("；") || "无明确硬缺口")}<br><strong>薪资与机会成本：</strong>${esc(audit.salary_opp_cost || "未提供")} ${audit.note ? `<br><strong>校准备注：</strong>${esc(audit.note)}` : ""}</div></div>
+        ${Object.keys(external).length ? `<div class="section-divider"><h4>外部接口审计</h4><div class="panel"><div class="kv"><span>接口等级</span><span>${extLevel}</span></div><div class="kv"><span>对外比例</span><span>${esc(external.estimated_external_ratio ?? "待核验")}${external.estimated_external_ratio != null ? "%" : ""}</span></div><div class="kv"><span>产品:方案</span><span>${esc(external.product_vs_solution_ratio || "待核验")}</span></div><div class="kv"><span>出差</span><span>${esc(external.travel_requirement || "待核验")}</span></div><div style="margin-top:7px"><strong>对外工作：</strong>${esc(arr(external.external_work_type).join("、") || "待核验")}<br><strong>成功指标：</strong>${esc(arr(external.external_success_metrics).join("、") || "待核验")}</div>${external.external_interface_summary ? `<p>${esc(external.external_interface_summary)}</p>` : ""}${external.stay_risk ? `<div class="warning">⚠ ${esc(external.stay_risk)}</div>` : ""}</div></div>` : ""}
+        <div class="section-divider"><h4>来源（点击进入真实 JD 页面）</h4><div class="source-links">${sourceLinks || '<span class="muted">暂无来源链接</span>'}<a class="apply-link" href="${esc(job.url || "#")}" target="_blank" rel="noopener noreferrer">打开主来源 ↗</a></div><div class="notice">来源页面属于招聘平台或职位聚合站，岗位可能关闭、更新或需要登录；请以打开后的最新 JD 为准。</div></div>`;
+    }
+
+    $("refresh").addEventListener("click", refresh); $("reset").addEventListener("click", resetDemo); $("export").addEventListener("click", exportMarks);
+    $("search").addEventListener("input", (event) => { state.filters.query = event.target.value; render(); });
+    $("sort").addEventListener("change", (event) => { state.filters.sort = event.target.value; render(); });
+    $("mark-filter").addEventListener("change", (event) => { state.filters.mark = event.target.value; render(); });
+    fetch("public_jobs.json", { cache: "no-store" }).then((response) => { if (!response.ok) throw new Error(`数据加载失败（${response.status}）`); return response.json(); }).then(init).catch((error) => { $("status").textContent = `无法加载公开岗位数据：${error.message}`; });
   </script>
 </body>
 </html>

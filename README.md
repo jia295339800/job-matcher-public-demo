@@ -5,15 +5,19 @@
 - 仓库：<https://github.com/jia295339800/job-matcher-public-demo>
 - 在线演示：<https://htmlpreview.github.io/?https://github.com/jia295339800/job-matcher-public-demo/blob/main/docs/index.html>
 
-这个仓库只包含模拟岗位和演示逻辑，不包含真实简历、真实职位库、个人信息、猎聘/BOSS 登录态或任何授权 token。
+这个仓库包含经过筛选的公开岗位信息和演示逻辑，不包含真实简历、个人信息、猎聘/BOSS 登录态或任何授权 token。招聘页面可能随时间关闭或更新，链接以打开后的最新页面为准。
 
 ## 当前 Demo 能做什么
 
-- 点击“刷新岗位”，从本地模拟岗位源获取下一批职位；
+- 展示来自本地 Job Matcher 岗位池的公开职位信息、匹配分和审计详情；
+- 点击岗位卡片上的 `✓` / `✕` 保留“合适/不合适”标记，标记会保存在当前浏览器；
+- 点击“复制标记 JSON”导出当前标记，便于回到 Job Matcher 继续筛选；
+- 每个岗位的来源名称都是可点击链接，可打开真实 JD 页面核验；
+- 点击“刷新岗位”，模拟从职位源获取下一批职位；
 - 对已有职位做去重，已有职位的 `new` 状态会被清除；
 - 只有本次首次进入职位库的职位显示 `NEW`；
-- 保留岗位的匹配分、薪资、地点、来源和匹配说明；
-- 页面和本地服务均不需要 LLM，可离线运行。
+- 保留岗位的匹配分、薪资、地点、JD 要求、匹配优势/短板、审计证据和外部接口信息；
+- 页面和本地服务均不需要 LLM；页面可由 GitHub Pages 或本地 HTTP 服务直接运行。
 
 ## 运行
 
@@ -38,10 +42,10 @@ python app/server.py
 
 ```text
 app/
-  server.py          # 本地 HTTP 服务、模拟检索和增量合并
-  static/index.html  # 前端页面与刷新按钮
+  server.py          # 本地 HTTP 服务（兼容旧的模拟 API）
 docs/
-  index.html         # GitHub Pages 静态演示版（内置脱敏 fixture）
+  index.html         # GitHub Pages / 本地共用的静态演示版
+  public_jobs.json   # 来自本地 Job Matcher 的公开岗位详情与来源链接
 data/
   seed_jobs.json     # 脱敏模拟职位和模拟刷新批次
 tests/

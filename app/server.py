@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
 SEED_PATH = DATA_DIR / "seed_jobs.json"
 STATE_PATH = DATA_DIR / "state.json"
-STATIC_DIR = ROOT / "app" / "static"
+STATIC_DIR = ROOT / "docs"
 
 
 def now_iso() -> str:
@@ -124,6 +124,15 @@ class Handler(BaseHTTPRequestHandler):
         self.wfile.write(encoded)
 
     def do_GET(self) -> None:  # noqa: N802
+        if self.path == "/public_jobs.json":
+            raw = (STATIC_DIR / "public_jobs.json").read_bytes()
+            self.send_response(HTTPStatus.OK)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Content-Length", str(len(raw)))
+            self.send_header("Cache-Control", "no-store")
+            self.end_headers()
+            self.wfile.write(raw)
+            return
         if self.path == "/api/jobs":
             self.send_json(payload(load_state()))
             return
