@@ -47,14 +47,14 @@ docs/
   index.html         # GitHub Pages / 本地共用的静态演示版
   public_jobs.json   # 来自本地 Job Matcher 的公开岗位详情与来源链接
 data/
-  seed_jobs.json     # 脱敏模拟职位和模拟刷新批次
+  seed_jobs.json     # 旧 API 兼容用的脱敏模拟职位和刷新批次
 tests/
   test_store.py      # new/existing 增量逻辑测试
 ```
 
 ## 生产版如何接入
 
-当前 Demo 用本地 JSON 模拟职位源。生产版可以把 `fetch_candidates()` 替换为：
+公开页面使用 `docs/public_jobs.json` 展示本地 Job Matcher 已整理的公开岗位；本地服务仍保留一组脱敏模拟 API 作为工程演示。生产版可以把 `fetch_candidates()` 替换为：
 
 - 猎聘 CLI；
 - BOSS/MCP 或其他招聘平台连接器；
