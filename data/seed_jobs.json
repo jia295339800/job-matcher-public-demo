@@ -1,0 +1,129 @@
+{
+  "seed_jobs": [
+    {
+      "id": "seed-001",
+      "title": "AI 客服产品经理",
+      "company": "示例智能服务公司",
+      "location": "深圳",
+      "salary": "30-45K·14薪",
+      "source": "mock-source",
+      "url": "https://example.com/jobs/seed-001",
+      "score": 88,
+      "recommendation": "apply",
+      "strengths": ["智能客服工作台经验可迁移", "有 B 端流程和人机协同经验"],
+      "gaps": ["需核验语音交互经验"]
+    },
+    {
+      "id": "seed-002",
+      "title": "销售提效产品经理",
+      "company": "示例企业服务公司",
+      "location": "深圳",
+      "salary": "28-42K·16薪",
+      "source": "mock-source",
+      "url": "https://example.com/jobs/seed-002",
+      "score": 84,
+      "recommendation": "apply",
+      "strengths": ["客户经营和任务编排经验", "有可量化业务结果"],
+      "gaps": ["Agent 平台经验需要补充"]
+    },
+    {
+      "id": "seed-003",
+      "title": "保险科技业务产品经理",
+      "company": "示例保险科技公司",
+      "location": "深圳",
+      "salary": "25-40K·14薪",
+      "source": "mock-source",
+      "url": "https://example.com/jobs/seed-003",
+      "score": 81,
+      "recommendation": "apply",
+      "strengths": ["保险业务理解直接匹配", "熟悉流程数字化和运营配置"],
+      "gaps": ["需确认具体业务线"]
+    },
+    {
+      "id": "seed-004",
+      "title": "企业 AI 应用产品经理",
+      "company": "示例数字化公司",
+      "location": "广州/深圳",
+      "salary": "25-38K·14薪",
+      "source": "mock-source",
+      "url": "https://example.com/jobs/seed-004",
+      "score": 76,
+      "recommendation": "stretch",
+      "strengths": ["有流程自动化和 AI 工作流实践"],
+      "gaps": ["企业级 Agent 平台经验较少"]
+    }
+  ],
+  "refresh_batches": [
+    [
+      {
+        "id": "seed-002",
+        "title": "销售提效产品经理",
+        "company": "示例企业服务公司",
+        "location": "深圳",
+        "salary": "28-42K·16薪",
+        "source": "mock-source",
+        "url": "https://example.com/jobs/seed-002",
+        "score": 84,
+        "recommendation": "apply",
+        "strengths": ["客户经营和任务编排经验", "有可量化业务结果"],
+        "gaps": ["Agent 平台经验需要补充"]
+      },
+      {
+        "id": "new-005",
+        "title": "AI 保险运营产品经理",
+        "company": "示例健康险科技公司",
+        "location": "深圳",
+        "salary": "30-50K·14薪",
+        "source": "mock-refresh-1",
+        "url": "https://example.com/jobs/new-005",
+        "score": 82,
+        "recommendation": "apply",
+        "strengths": ["保险运营和 AI 应用方向匹配"],
+        "gaps": ["需确认 Agent 落地深度"]
+      }
+    ],
+    [
+      {
+        "id": "seed-003",
+        "title": "保险科技业务产品经理",
+        "company": "示例保险科技公司",
+        "location": "深圳",
+        "salary": "25-40K·14薪",
+        "source": "mock-source",
+        "url": "https://example.com/jobs/seed-003",
+        "score": 81,
+        "recommendation": "apply",
+        "strengths": ["保险业务理解直接匹配", "熟悉流程数字化和运营配置"],
+        "gaps": ["需确认具体业务线"]
+      },
+      {
+        "id": "new-006",
+        "title": "智能作业平台产品经理",
+        "company": "示例 B 端平台公司",
+        "location": "深圳",
+        "salary": "32-48K·15薪",
+        "source": "mock-refresh-2",
+        "url": "https://example.com/jobs/new-006",
+        "score": 86,
+        "recommendation": "apply",
+        "strengths": ["作业平台和规则编排经验匹配"],
+        "gaps": ["需要了解客户试点职责"]
+      }
+    ],
+    [
+      {
+        "id": "new-007",
+        "title": "AI Agent 业务产品经理",
+        "company": "示例智能工作流公司",
+        "location": "远程/深圳",
+        "salary": "35-55K·14薪",
+        "source": "mock-refresh-3",
+        "url": "https://example.com/jobs/new-007",
+        "score": 74,
+        "recommendation": "stretch",
+        "strengths": ["有工作流编排和人机协同实践"],
+        "gaps": ["缺少企业级 Agent 平台规模化案例"]
+      }
+    ]
+  ]
+}
