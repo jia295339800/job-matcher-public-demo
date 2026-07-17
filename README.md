@@ -2,6 +2,9 @@
 
 一个可公开展示的求职岗位匹配 Demo。
 
+- 仓库：<https://github.com/jia295339800/job-matcher-public-demo>
+- 在线演示：<https://htmlpreview.github.io/?https://github.com/jia295339800/job-matcher-public-demo/blob/main/docs/index.html>
+
 这个仓库只包含模拟岗位和演示逻辑，不包含真实简历、真实职位库、个人信息、猎聘/BOSS 登录态或任何授权 token。
 
 ## 当前 Demo 能做什么
