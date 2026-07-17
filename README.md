@@ -5,7 +5,7 @@
 - 仓库：<https://github.com/jia295339800/job-matcher-public-demo>
 - 在线演示：<https://htmlpreview.github.io/?https://github.com/jia295339800/job-matcher-public-demo/blob/main/docs/index.html>
 
-这个仓库包含经过筛选的公开岗位信息和演示逻辑，不包含真实简历、个人信息、猎聘/BOSS 登录态或任何授权 token。招聘页面可能随时间关闭或更新，链接以打开后的最新页面为准。
+这个仓库包含经过筛选并脱敏的公开岗位信息和演示逻辑：企业名称、薪资及相关文字已隐藏，来源 URL 保留用于打开真实 JD；不包含真实简历、个人信息、猎聘/BOSS 登录态或任何授权 token。招聘页面可能随时间关闭或更新，链接以打开后的最新页面为准。
 
 ## 当前 Demo 能做什么
 
@@ -45,7 +45,7 @@ app/
   server.py          # 本地 HTTP 服务（兼容旧的模拟 API）
 docs/
   index.html         # GitHub Pages / 本地共用的静态演示版
-  public_jobs.json   # 来自本地 Job Matcher 的公开岗位详情与来源链接
+  public_jobs.json   # 脱敏岗位详情与来源链接
 data/
   seed_jobs.json     # 旧 API 兼容用的脱敏模拟职位和刷新批次
 tests/

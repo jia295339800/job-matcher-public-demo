@@ -50,6 +50,13 @@ class RefreshStateTest(unittest.TestCase):
         self.assertIn("good", marks)
         self.assertIn("bad", marks)
 
+        for job in jobs + refreshed:
+            self.assertRegex(job["company"], r"^匿名企业 \d+$")
+            self.assertEqual(job["salary"], "薪资面议")
+            self.assertEqual(job["salary_gate"], "薪资信息已隐藏")
+            self.assertEqual(job["audit"]["salary_opp_cost"], "薪资信息已隐藏")
+            self.assertTrue(all(source["source"].startswith("来源页面") for source in job["source_urls"]))
+
 
 if __name__ == "__main__":
     unittest.main()

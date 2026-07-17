@@ -1,23 +1,23 @@
 {
   "version": 2,
   "generated_from": "本地 Job Matcher 报告（脱敏演示允许使用公开岗位信息）",
-  "note": "岗位来自真实公开职位记录；职位状态、薪资和链接可能随招聘平台变化。",
+  "note": "公开演示版：企业名称、薪资及相关文字已脱敏；来源 URL 保留用于打开真实 JD 页面。",
   "jobs": [
     {
       "title": "产品经理（智能两核方向）",
-      "company": "平安健康保险 / 平安科技智能两核AI部",
+      "company": "匿名企业 01",
       "location": "深圳",
       "url": "https://bebee.com/cn/jobs/shenzhen-guangdong--theirstack-738483396",
-      "salary": "未披露",
+      "salary": "薪资面议",
       "date_posted": "2026-07-10",
       "first_seen": "2026-07-11",
       "status": "existing",
       "sources": [
-        "web"
+        "来源页面 1"
       ],
       "source_urls": [
         {
-          "source": "web",
+          "source": "来源页面 1",
           "url": "https://bebee.com/cn/jobs/shenzhen-guangdong--theirstack-738483396"
         }
       ],
@@ -64,7 +64,7 @@
         "resume_version": "保险纵深版",
         "channel": "官方直投 / 猎头推荐",
         "salary_gate": "待核薪(不优先不扣死)",
-        "salary_opp_cost": "薪资待核，不优先不扣死；核验后据总包判断是否值得机会成本",
+        "salary_opp_cost": "薪资信息已隐藏",
         "evidence_summary": {
           "title_score": 90.0,
           "skills_score": 41.7,
@@ -111,7 +111,7 @@
         ],
         "note": "保险+AI审核(置信度阈值/人工兜底)高度契合；缺理赔领域深度(优先项)，补大模型平台方案后可投"
       },
-      "salary_gate": "待核薪(不优先不扣死)",
+      "salary_gate": "薪资信息已隐藏",
       "source_class_eff": "B",
       "user_mark": "",
       "external_interface": {},
@@ -139,24 +139,25 @@
         "years_required": 3,
         "job_type": "fulltime"
       },
-      "key": "平安健康保险 / 平安科技智能两核ai部|产品经理（智能两核方向）",
-      "id": "平安健康保险 / 平安科技智能两核ai部|产品经理（智能两核方向）"
+      "key": "job-001",
+      "id": "job-001",
+      "snippet": "岗位方向：产品经理（智能两核方向）；核心能力：保险科技、业务规则、AI应用、人机协同。具体职责与任职要求请打开来源 JD。"
     },
     {
       "title": "智能客服产品经理-AI方向",
-      "company": "猎聘匿名线索 77035997（待反查）",
+      "company": "匿名企业 02",
       "location": "深圳",
       "url": "https://www.liepin.com/a/77035997.shtml?mscid=soai_pc_001",
-      "salary": "45-65K·16薪",
+      "salary": "薪资面议",
       "date_posted": "",
       "first_seen": "2026-07-11",
       "status": "existing",
       "sources": [
-        "liepin_anonymous"
+        "来源页面 1"
       ],
       "source_urls": [
         {
-          "source": "liepin_anonymous",
+          "source": "来源页面 1",
           "url": "https://www.liepin.com/a/77035997.shtml?mscid=soai_pc_001"
         }
       ],
@@ -194,8 +195,8 @@
         "worth": false,
         "resume_version": "—",
         "channel": "仅作线索",
-        "salary_gate": "达标(≥38.4万)",
-        "salary_opp_cost": "总包约88.0万/年≥参考线38.4万→机会成本可接受",
+        "salary_gate": "达标(薪资信息已隐藏)",
+        "salary_opp_cost": "薪资信息已隐藏",
         "evidence_summary": {
           "title_score": 100.0,
           "skills_score": 63.3,
@@ -220,7 +221,7 @@
         "critical_missing": [],
         "note": ""
       },
-      "salary_gate": "达标(≥38.4万)",
+      "salary_gate": "薪资信息已隐藏",
       "source_class_eff": "C",
       "user_mark": "good",
       "external_interface": {
@@ -252,24 +253,25 @@
         "years_required": 5,
         "job_type": "fulltime"
       },
-      "key": "猎聘匿名线索 77035997（待反查）|智能客服产品经理",
-      "id": "猎聘匿名线索 77035997（待反查）|智能客服产品经理"
+      "key": "job-002",
+      "id": "job-002",
+      "snippet": "岗位方向：智能客服产品经理-AI方向；核心能力：智能客服、AI应用、B端产品。具体职责与任职要求请打开来源 JD。"
     },
     {
       "title": "智能客服产品经理（远程）",
-      "company": "猎聘匿名线索 76971489（待反查）",
+      "company": "匿名企业 03",
       "location": "深圳/远程",
       "url": "https://www.liepin.com/a/76971489.shtml?mscid=soai_pc_001",
-      "salary": "50-80K·18薪",
+      "salary": "薪资面议",
       "date_posted": "",
       "first_seen": "2026-07-11",
       "status": "existing",
       "sources": [
-        "liepin_anonymous"
+        "来源页面 1"
       ],
       "source_urls": [
         {
-          "source": "liepin_anonymous",
+          "source": "来源页面 1",
           "url": "https://www.liepin.com/a/76971489.shtml?mscid=soai_pc_001"
         }
       ],
@@ -308,7 +310,7 @@
         "resume_version": "—",
         "channel": "仅作线索",
         "salary_gate": "试验线(外企/远程)",
-        "salary_opp_cost": "总包约117.0万/年≥参考线38.4万→机会成本可接受",
+        "salary_opp_cost": "薪资信息已隐藏",
         "evidence_summary": {
           "title_score": 100.0,
           "skills_score": 65.0,
@@ -335,7 +337,7 @@
         "critical_missing": [],
         "note": ""
       },
-      "salary_gate": "试验线(外企/远程)",
+      "salary_gate": "薪资信息已隐藏",
       "source_class_eff": "C",
       "user_mark": "good",
       "external_interface": {
@@ -351,7 +353,7 @@
           "AI自助率",
           "转人工率"
         ],
-        "stay_risk": "方向偏离：出海多语种全球化+资金安全熔断(身份隐匿/写操作禁令)为主战场，偏离候选保险科技B端主线；薪资虽高(50-80K·18薪)但JD核心能力与候选不重叠",
+        "stay_risk": "方向偏离：出海多语种全球化+资金安全熔断(身份隐匿/写操作禁令)为主战场，偏离候选保险科技B端主线；薪资虽高(薪资信息已隐藏)但JD核心能力与候选不重叠",
         "external_interface_summary": "纯产品建设岗，面向内部VIP运营团队，无外部客户共创。且方向偏离(出海资金合规)。"
       },
       "jd": {
@@ -370,29 +372,29 @@
         "years_required": 5,
         "job_type": "fulltime"
       },
-      "key": "猎聘匿名线索 76971489（待反查）|智能客服产品经理（远程）",
-      "id": "猎聘匿名线索 76971489（待反查）|智能客服产品经理（远程）"
+      "key": "job-003",
+      "id": "job-003",
+      "snippet": "岗位方向：智能客服产品经理（远程）；核心能力：智能客服、产品规划。具体职责与任职要求请打开来源 JD。"
     },
     {
       "title": "AI产品经理（智能客服）",
-      "company": "猎聘匿名线索 75625261（待反查）",
+      "company": "匿名企业 04",
       "location": "深圳南山",
       "url": "https://www.liepin.com/a/75625261.shtml?mscid=soai_pc_001",
-      "salary": "25-35K·16薪",
+      "salary": "薪资面议",
       "date_posted": "",
       "first_seen": "2026-07-11",
       "status": "existing",
       "sources": [
-        "liepin_anonymous",
-        "猎聘·同岗渠道(75450795,25-40K·16薪)"
+        "来源页面 1"
       ],
       "source_urls": [
         {
-          "source": "liepin_anonymous",
+          "source": "来源页面 1",
           "url": "https://www.liepin.com/a/75625261.shtml?mscid=soai_pc_001"
         },
         {
-          "source": "猎聘·同岗渠道(75450795,25-40K·16薪)",
+          "source": "来源页面 2",
           "url": "https://www.liepin.com/a/75450795.shtml?mscid=soai_pc_001"
         }
       ],
@@ -431,8 +433,8 @@
         "worth": false,
         "resume_version": "—",
         "channel": "仅作线索",
-        "salary_gate": "达标(≥38.4万)",
-        "salary_opp_cost": "总包约48.0万/年≥参考线38.4万→机会成本可接受",
+        "salary_gate": "达标(薪资信息已隐藏)",
+        "salary_opp_cost": "薪资信息已隐藏",
         "evidence_summary": {
           "title_score": 100.0,
           "skills_score": 70.0,
@@ -457,7 +459,7 @@
         "critical_missing": [],
         "note": "AI智能客服PM，与75450795为同一岗双渠道；渠道75625261要求英语工作语言(硬门槛缺失)→难投；维持仅作线索"
       },
-      "salary_gate": "达标(≥38.4万)",
+      "salary_gate": "薪资信息已隐藏",
       "source_class_eff": "C",
       "user_mark": "good",
       "external_interface": {
@@ -472,7 +474,7 @@
           "对话效果指标",
           "业务转化率"
         ],
-        "stay_risk": "该渠道标注英语工作语言(硬缺失)；薪资25-35K·16薪偏低；互金催收场景与保险科技有距离",
+        "stay_risk": "该渠道标注英语工作语言(硬缺失)；薪资信息已隐藏偏低；互金催收场景与保险科技有距离",
         "external_interface_summary": "内部对话机器人产品岗，无外部客户接口。英语硬伤+薪资偏低。"
       },
       "jd": {
@@ -490,24 +492,25 @@
         "years_required": 3,
         "job_type": "fulltime"
       },
-      "key": "猎聘匿名线索 75625261（待反查）|ai产品经理（智能客服）",
-      "id": "猎聘匿名线索 75625261（待反查）|ai产品经理（智能客服）"
+      "key": "job-004",
+      "id": "job-004",
+      "snippet": "岗位方向：AI产品经理（智能客服）；核心能力：AI应用、智能客服、金融科技。具体职责与任职要求请打开来源 JD。"
     },
     {
       "title": "CRM系统产品经理",
-      "company": "猎聘匿名线索 74744111（待反查）",
+      "company": "匿名企业 05",
       "location": "深圳",
       "url": "https://www.liepin.com/a/74744111.shtml?mscid=soai_pc_001",
-      "salary": "25-35K·18薪",
+      "salary": "薪资面议",
       "date_posted": "",
       "first_seen": "2026-07-11",
       "status": "existing",
       "sources": [
-        "liepin_anonymous"
+        "来源页面 1"
       ],
       "source_urls": [
         {
-          "source": "liepin_anonymous",
+          "source": "来源页面 1",
           "url": "https://www.liepin.com/a/74744111.shtml?mscid=soai_pc_001"
         }
       ],
@@ -547,8 +550,8 @@
         "worth": false,
         "resume_version": "—",
         "channel": "仅作线索",
-        "salary_gate": "达标(≥38.4万)",
-        "salary_opp_cost": "总包约54.0万/年≥参考线38.4万→机会成本可接受",
+        "salary_gate": "达标(薪资信息已隐藏)",
+        "salary_opp_cost": "薪资信息已隐藏",
         "evidence_summary": {
           "title_score": 90.0,
           "skills_score": 65.0,
@@ -582,7 +585,7 @@
         ],
         "note": "CRM系统PM要求5年以上快消品(FMCG)行业经验+海外优先，均超出候选能力范畴(无快消/海外背景)→难投；维持仅作线索"
       },
-      "salary_gate": "达标(≥38.4万)",
+      "salary_gate": "薪资信息已隐藏",
       "source_class_eff": "C",
       "user_mark": "",
       "external_interface": {},
@@ -603,29 +606,29 @@
         "years_required": 5,
         "job_type": "fulltime"
       },
-      "key": "猎聘匿名线索 74744111（待反查）|crm系统产品经理",
-      "id": "猎聘匿名线索 74744111（待反查）|crm系统产品经理"
+      "key": "job-005",
+      "id": "job-005",
+      "snippet": "岗位方向：CRM系统产品经理；核心能力：CRM、业务流程。具体职责与任职要求请打开来源 JD。"
     },
     {
       "title": "AI解决方案架构师/内部变革/产品经理",
-      "company": "猎聘匿名线索 75194619（待反查）",
+      "company": "匿名企业 06",
       "location": "深圳",
       "url": "https://www.liepin.com/a/75194619.shtml?mscid=soai_pc_001",
-      "salary": "30-60K",
+      "salary": "薪资面议",
       "date_posted": "",
       "first_seen": "2026-07-11",
       "status": "existing",
       "sources": [
-        "liepin_anonymous",
-        "猎聘·同源渠道(75226017,25-50K)"
+        "来源页面 1"
       ],
       "source_urls": [
         {
-          "source": "liepin_anonymous",
+          "source": "来源页面 1",
           "url": "https://www.liepin.com/a/75194619.shtml?mscid=soai_pc_001"
         },
         {
-          "source": "猎聘·同源渠道(75226017,25-50K)",
+          "source": "来源页面 2",
           "url": "https://www.liepin.com/a/75226017.shtml?mscid=soai_pc_001"
         }
       ],
@@ -661,8 +664,8 @@
         "worth": false,
         "resume_version": "—",
         "channel": "仅作线索",
-        "salary_gate": "达标(≥38.4万)",
-        "salary_opp_cost": "总包约63.0万/年≥参考线38.4万→机会成本可接受",
+        "salary_gate": "达标(薪资信息已隐藏)",
+        "salary_opp_cost": "薪资信息已隐藏",
         "evidence_summary": {
           "title_score": 60.0,
           "skills_score": 40.0,
@@ -687,7 +690,7 @@
         "critical_missing": [],
         "note": ""
       },
-      "salary_gate": "达标(≥38.4万)",
+      "salary_gate": "薪资信息已隐藏",
       "source_class_eff": "C",
       "user_mark": "good",
       "external_interface": {
@@ -720,39 +723,37 @@
         "years_required": 5,
         "job_type": "fulltime"
       },
-      "key": "猎聘匿名线索 75194619（待反查）|ai解决方案架构师/内部变革/产品经理",
-      "id": "猎聘匿名线索 75194619（待反查）|ai解决方案架构师/内部变革/产品经理"
+      "key": "job-006",
+      "id": "job-006",
+      "snippet": "岗位方向：AI解决方案架构师/内部变革/产品经理；核心能力：AI应用、解决方案、业务流程。具体职责与任职要求请打开来源 JD。"
     },
     {
       "title": "IT高级产品经理（客服智能化方向）",
-      "company": "韶音科技",
+      "company": "匿名企业 07",
       "location": "深圳南山区",
       "url": "https://bebee.com/cn/jobs/it--techmap_cn_83468897",
-      "salary": "30-60K·14薪（猎头多渠道；原官方未披露）",
+      "salary": "薪资面议",
       "date_posted": "2026-07-07",
       "first_seen": "2026-07-11",
       "status": "existing",
       "sources": [
-        "韶音官方/beBee",
-        "猎聘·韶音渠道(7)",
-        "猎聘·韶音渠道(9)",
-        "猎聘·韶音渠道(77701183,30-50K·16薪)"
+        "来源页面 1"
       ],
       "source_urls": [
         {
-          "source": "韶音官方/beBee",
+          "source": "来源页面 1",
           "url": "https://bebee.com/cn/jobs/it--techmap_cn_83468897"
         },
         {
-          "source": "猎聘·韶音渠道(7)",
+          "source": "来源页面 2",
           "url": "https://www.liepin.com/a/76934437.shtml?mscid=soai_pc_001"
         },
         {
-          "source": "猎聘·韶音渠道(9)",
+          "source": "来源页面 3",
           "url": "https://www.liepin.com/a/77306095.shtml?mscid=soai_pc_001"
         },
         {
-          "source": "猎聘·韶音渠道(77701183,30-50K·16薪)",
+          "source": "来源页面 4",
           "url": "https://www.liepin.com/a/77701183.shtml?mscid=soai_pc_001"
         }
       ],
@@ -762,7 +763,7 @@
       "score": 74.8,
       "recommendation": "apply",
       "strengths": [
-        "客服系统全生命周期与微保经验高度一致",
+        "客服系统全生命周期与[企业名称已隐藏]经验高度一致",
         "智能对话/外呼/质检全覆盖"
       ],
       "weaknesses": [
@@ -795,8 +796,8 @@
         "worth": true,
         "resume_version": "AI产品通用版",
         "channel": "官方直投 / 猎头推荐",
-        "salary_gate": "达标(≥38.4万)",
-        "salary_opp_cost": "总包约63.0万/年≥参考线38.4万→机会成本可接受",
+        "salary_gate": "达标(薪资信息已隐藏)",
+        "salary_opp_cost": "薪资信息已隐藏",
         "evidence_summary": {
           "title_score": 60.0,
           "skills_score": 86.0,
@@ -829,9 +830,9 @@
           "AI/非AI工具融合",
           "零售电商场景"
         ],
-        "note": "韶音(Shokz)客服智能化PM：客服系统/智能对话/智能质检/工单流转直接匹配(AI客服工作台+客户经营)；零售电商场景为需补短板；薪资30-60K·14薪≈42-84万/年超参考线。猎聘匿名76934437/77306095/77701183(30-50K·16薪)均经反查=同岗多渠道，已合并入此条"
+        "note": "[企业名称已隐藏]([企业名称已隐藏])客服智能化PM：客服系统/智能对话/智能质检/工单流转直接匹配(AI客服工作台+客户经营)；零售电商场景为需补短板；薪资信息已隐藏≈薪资信息已隐藏超参考线。[企业名称已隐藏]76934437/77306095/77701183(薪资信息已隐藏)均经反查=同岗多渠道，已合并入此条"
       },
-      "salary_gate": "达标(≥38.4万)",
+      "salary_gate": "薪资信息已隐藏",
       "source_class_eff": "B",
       "user_mark": "good",
       "external_interface": {
@@ -869,24 +870,25 @@
         "years_required": 5,
         "job_type": "fulltime"
       },
-      "key": "韶音科技|IT高级产品经理（客服智能化方向）",
-      "id": "韶音科技|IT高级产品经理（客服智能化方向）"
+      "key": "job-007",
+      "id": "job-007",
+      "snippet": "岗位方向：IT高级产品经理（客服智能化方向）；核心能力：客服系统、智能对话机器人、智能质检、工单流转。具体职责与任职要求请打开来源 JD。"
     },
     {
       "title": "产品经理（AI互联网保险 / Agent方向）",
-      "company": "中国平安",
+      "company": "匿名企业 08",
       "location": "深圳",
-      "url": "https://watchjobs.net/zh/explore/job/736ABBBA5F8545FC9EB34CECD18F3EEA/产品经理-AI互联网保险方向-中国平安",
-      "salary": "未披露",
+      "url": "https://watchjobs.net/zh/explore/job/736ABBBA5F8545FC9EB34CECD18F3EEA/产品经理-AI互联网保险方向-匿名企业 08",
+      "salary": "薪资面议",
       "date_posted": "2026-07-11",
       "first_seen": "2026-07-11",
       "status": "existing",
       "sources": [
-        "watchjobs"
+        "来源页面 1"
       ],
       "source_urls": [
         {
-          "source": "watchjobs",
+          "source": "来源页面 1",
           "url": "https://watchjobs.net/zh/explore/job/736ABBBA5F8545FC9EB34CECD18F3EEA/产品经理-AI互联网保险方向-中国平安"
         }
       ],
@@ -903,7 +905,7 @@
       "weaknesses": [
         "含材料撰写/汇报PPT工作",
         "偏C端AI Native体验+保险场景(与原watchjobs核保核赔Agent描述有出入,以官方为准)",
-        "平安集团层级多"
+        "[企业名称已隐藏]集团层级多"
       ],
       "matched_keywords": [
         "Agent",
@@ -932,7 +934,7 @@
         "resume_version": "保险纵深版",
         "channel": "官方直投 / 猎头推荐",
         "salary_gate": "待核薪(不优先不扣死)",
-        "salary_opp_cost": "薪资待核，不优先不扣死；核验后据总包判断是否值得机会成本",
+        "salary_opp_cost": "薪资信息已隐藏",
         "evidence_summary": {
           "title_score": 90.0,
           "skills_score": 36.7,
@@ -967,7 +969,7 @@
         ],
         "note": "互联网保险契合，但Agent/大模型应用为必须项且仅为理解级(0.3)→核心缺口，标冲刺"
       },
-      "salary_gate": "待核薪(不优先不扣死)",
+      "salary_gate": "薪资信息已隐藏",
       "source_class_eff": "B",
       "user_mark": "",
       "external_interface": {},
@@ -992,24 +994,25 @@
         "years_required": 5,
         "job_type": "fulltime"
       },
-      "key": "中国平安|产品经理（AI互联网保险 / Agent方向）",
-      "id": "中国平安|产品经理（AI互联网保险 / Agent方向）"
+      "key": "job-008",
+      "id": "job-008",
+      "snippet": "岗位方向：产品经理（AI互联网保险 / Agent方向）；核心能力：Agent、智能体、核保、核赔。具体职责与任职要求请打开来源 JD。"
     },
     {
       "title": "产品经理（企业客户解决方案）",
-      "company": "平安好医生",
+      "company": "匿名企业 09",
       "location": "深圳",
       "url": "https://bebee.com/cn/jobs/shenzhen-guangdong--theirstack-738479678",
-      "salary": "未披露",
+      "salary": "薪资面议",
       "date_posted": "2026-07-09",
       "first_seen": "2026-07-12",
       "status": "existing",
       "sources": [
-        "web"
+        "来源页面 1"
       ],
       "source_urls": [
         {
-          "source": "web",
+          "source": "来源页面 1",
           "url": "https://bebee.com/cn/jobs/shenzhen-guangdong--theirstack-738479678"
         }
       ],
@@ -1054,7 +1057,7 @@
         "resume_version": "AI产品通用版",
         "channel": "官方直投 / 猎头推荐",
         "salary_gate": "待核薪(不优先不扣死)",
-        "salary_opp_cost": "薪资待核，不优先不扣死；核验后据总包判断是否值得机会成本",
+        "salary_opp_cost": "薪资信息已隐藏",
         "evidence_summary": {
           "title_score": 60.0,
           "skills_score": 58.8,
@@ -1090,7 +1093,7 @@
         ],
         "note": ""
       },
-      "salary_gate": "待核薪(不优先不扣死)",
+      "salary_gate": "薪资信息已隐藏",
       "source_class_eff": "B",
       "user_mark": "",
       "external_interface": {},
@@ -1118,24 +1121,25 @@
         "years_required": 3,
         "job_type": "fulltime"
       },
-      "key": "平安好医生|产品经理（企业客户解决方案）",
-      "id": "平安好医生|产品经理（企业客户解决方案）"
+      "key": "job-009",
+      "id": "job-009",
+      "snippet": "岗位方向：产品经理（企业客户解决方案）；核心能力：保险、企业服务、售前、解决方案。具体职责与任职要求请打开来源 JD。"
     },
     {
       "title": "智能体-B端产品经理-Workbuddy/CodeBuddy",
-      "company": "腾讯",
+      "company": "匿名企业 10",
       "location": "深圳",
       "url": "https://careers.tencent.com/jobdesc.html?postId=2058757441348349952",
-      "salary": "未披露",
+      "salary": "薪资面议",
       "date_posted": "2026-05-25",
       "first_seen": "2026-07-12",
       "status": "existing",
       "sources": [
-        "web"
+        "来源页面 1"
       ],
       "source_urls": [
         {
-          "source": "web",
+          "source": "来源页面 1",
           "url": "https://careers.tencent.com/jobdesc.html?postId=2058757441348349952"
         }
       ],
@@ -1181,7 +1185,7 @@
         "resume_version": "AI产品通用版",
         "channel": "官方直投 / 猎头推荐",
         "salary_gate": "待核薪(不优先不扣死)",
-        "salary_opp_cost": "薪资待核，不优先不扣死；核验后据总包判断是否值得机会成本",
+        "salary_opp_cost": "薪资信息已隐藏",
         "evidence_summary": {
           "title_score": 30.0,
           "skills_score": 45.0,
@@ -1217,7 +1221,7 @@
         ],
         "note": "企业级Agent平台/云平台/开发者工具均缺失(0)，最高冲刺"
       },
-      "salary_gate": "待核薪(不优先不扣死)",
+      "salary_gate": "薪资信息已隐藏",
       "source_class_eff": "A",
       "user_mark": "good",
       "external_interface": {
@@ -1236,7 +1240,7 @@
           "商业化收入",
           "生态集成数"
         ],
-        "stay_risk": "产品主体定位明确(平台建设+商业化)，但有高频汇报可能(腾讯内部PM体系)和商业化业绩压力；候选缺云平台/SaaS商业化/Agent平台经验",
+        "stay_risk": "产品主体定位明确(平台建设+商业化)，但有高频汇报可能(匿名企业 10内部PM体系)和商业化业绩压力；候选缺云平台/SaaS商业化/Agent平台经验",
         "external_interface_summary": "最接近'客户共创型产品'画像：平台建设+大客户协同+POC+标杆沉淀。external_interface=2。"
       },
       "jd": {
@@ -1263,24 +1267,25 @@
         "years_required": 5,
         "job_type": "fulltime"
       },
-      "key": "腾讯|智能体-B端产品经理-Workbuddy/CodeBuddy",
-      "id": "腾讯|智能体-B端产品经理-Workbuddy/CodeBuddy"
+      "key": "job-010",
+      "id": "job-010",
+      "snippet": "岗位方向：智能体-B端产品经理-Workbuddy/CodeBuddy；核心能力：AI、Agent、SaaS、企业服务。具体职责与任职要求请打开来源 JD。"
     },
     {
       "title": "高级产品经理（B端）",
-      "company": "健康160",
+      "company": "匿名企业 11",
       "location": "深圳",
       "url": "https://www.tanzhi.cn/job-detail/5ce42954-b962-4035-8ee9-44f85d058b2e",
-      "salary": "25-40k·14薪",
+      "salary": "薪资面议",
       "date_posted": "2026-06-15",
       "first_seen": "2026-07-12",
       "status": "existing",
       "sources": [
-        "web"
+        "来源页面 1"
       ],
       "source_urls": [
         {
-          "source": "web",
+          "source": "来源页面 1",
           "url": "https://www.tanzhi.cn/job-detail/5ce42954-b962-4035-8ee9-44f85d058b2e"
         }
       ],
@@ -1323,8 +1328,8 @@
         "worth": true,
         "resume_version": "AI产品通用版",
         "channel": "官方直投 / 猎头推荐",
-        "salary_gate": "达标(≥38.4万)",
-        "salary_opp_cost": "总包约45.5万/年≥参考线38.4万→机会成本可接受",
+        "salary_gate": "达标(薪资信息已隐藏)",
+        "salary_opp_cost": "薪资信息已隐藏",
         "evidence_summary": {
           "title_score": 60.0,
           "skills_score": 58.8,
@@ -1359,7 +1364,7 @@
         ],
         "note": ""
       },
-      "salary_gate": "达标(≥38.4万)",
+      "salary_gate": "薪资信息已隐藏",
       "source_class_eff": "B",
       "user_mark": "",
       "external_interface": {},
@@ -1387,24 +1392,25 @@
         "years_required": 3,
         "job_type": "fulltime"
       },
-      "key": "健康160|高级产品经理（B端）",
-      "id": "健康160|高级产品经理（B端）"
+      "key": "job-011",
+      "id": "job-011",
+      "snippet": "岗位方向：高级产品经理（B端）；核心能力：健康、企业服务、SaaS、营销。具体职责与任职要求请打开来源 JD。"
     },
     {
       "title": "金融产品经理-证券风控方向",
-      "company": "猎头岗(待反查·禾蛙)",
+      "company": "匿名企业 12",
       "location": "深圳",
-      "url": "https://hewa.cn/positionDetails/nStVaFY2kXMdvjKS2UOhJQ_hw2_.html",
-      "salary": "30-50万",
+      "url": "https://hewa.cn/positionDetails/nStVaFY薪资信息已隐藏XMdvjKS2UOhJQ_hw2_.html",
+      "salary": "薪资面议",
       "date_posted": "2026-05-10",
       "first_seen": "2026-07-12",
       "status": "existing",
       "sources": [
-        "web"
+        "来源页面 1"
       ],
       "source_urls": [
         {
-          "source": "web",
+          "source": "来源页面 1",
           "url": "https://hewa.cn/positionDetails/nStVaFY2kXMdvjKS2UOhJQ_hw2_.html"
         }
       ],
@@ -1448,8 +1454,8 @@
         "worth": false,
         "resume_version": "—",
         "channel": "官方直投 / 猎头推荐",
-        "salary_gate": "达标(≥38.4万)",
-        "salary_opp_cost": "总包约40.0万/年≥参考线38.4万→机会成本可接受",
+        "salary_gate": "达标(薪资信息已隐藏)",
+        "salary_opp_cost": "薪资信息已隐藏",
         "evidence_summary": {
           "title_score": 20.0,
           "skills_score": 41.4,
@@ -1486,7 +1492,7 @@
         ],
         "note": ""
       },
-      "salary_gate": "达标(≥38.4万)",
+      "salary_gate": "薪资信息已隐藏",
       "source_class_eff": "B",
       "user_mark": "",
       "external_interface": {},
@@ -1513,24 +1519,25 @@
         "years_required": 5,
         "job_type": "fulltime"
       },
-      "key": "猎头岗(待反查·禾蛙)|金融产品经理-证券风控方向",
-      "id": "猎头岗(待反查·禾蛙)|金融产品经理-证券风控方向"
+      "key": "job-012",
+      "id": "job-012",
+      "snippet": "岗位方向：金融产品经理-证券风控方向；核心能力：风控、金融科技、数据分析、中台。具体职责与任职要求请打开来源 JD。"
     },
     {
       "title": "AI产品经理(驻场-金融大模型)",
-      "company": "中关村科金",
+      "company": "匿名企业 13",
       "location": "深圳",
       "url": "https://www.liepin.com/job/1982957405.shtml",
-      "salary": "20-30k",
+      "salary": "薪资面议",
       "date_posted": "2026-07",
       "first_seen": "2026-07-14",
       "status": "existing",
       "sources": [
-        "web"
+        "来源页面 1"
       ],
       "source_urls": [
         {
-          "source": "web",
+          "source": "来源页面 1",
           "url": "https://www.liepin.com/job/1982957405.shtml"
         }
       ],
@@ -1564,8 +1571,8 @@
         "worth": true,
         "resume_version": "AI产品通用版",
         "channel": "官方直投 / 猎头推荐",
-        "salary_gate": "临界(30-38.4万,仅特别匹配考虑)",
-        "salary_opp_cost": "总包约35.0万/年处于30-38.4万临界→仅岗位特别匹配或结构更优才承担机会成本",
+        "salary_gate": "临界(薪资信息已隐藏,仅特别匹配考虑)",
+        "salary_opp_cost": "薪资信息已隐藏",
         "evidence_summary": {
           "title_score": 60.0,
           "skills_score": 71.7,
@@ -1590,7 +1597,7 @@
         "critical_missing": [],
         "note": "金融大模型交付驻场；缺大模型交付体系经验，自strong降档"
       },
-      "salary_gate": "临界(30-38.4万,仅特别匹配考虑)",
+      "salary_gate": "薪资信息已隐藏",
       "source_class_eff": "B",
       "user_mark": "",
       "external_interface": {},
@@ -1612,24 +1619,25 @@
         "years_required": 3,
         "job_type": "fulltime"
       },
-      "key": "中关村科金|AI产品经理(驻场-金融大模型)",
-      "id": "中关村科金|AI产品经理(驻场-金融大模型)"
+      "key": "job-013",
+      "id": "job-013",
+      "snippet": "岗位方向：AI产品经理(驻场-金融大模型)；核心能力：AI、LLM、金融、保险。具体职责与任职要求请打开来源 JD。"
     },
     {
       "title": "AI员工平台产品经理(Agent方向)",
-      "company": "明心数智",
+      "company": "匿名企业 14",
       "location": "深圳",
       "url": "https://m.liepin.com/job/1982433973.shtml",
-      "salary": "20-40k",
+      "salary": "薪资面议",
       "date_posted": "2026-07-02",
       "first_seen": "2026-07-14",
       "status": "existing",
       "sources": [
-        "web"
+        "来源页面 1"
       ],
       "source_urls": [
         {
-          "source": "web",
+          "source": "来源页面 1",
           "url": "https://m.liepin.com/job/1982433973.shtml"
         }
       ],
@@ -1665,8 +1673,8 @@
         "worth": true,
         "resume_version": "AI产品通用版",
         "channel": "待核验在招后·官方/猎头",
-        "salary_gate": "达标(≥38.4万)",
-        "salary_opp_cost": "总包约42.0万/年≥参考线38.4万→机会成本可接受",
+        "salary_gate": "达标(薪资信息已隐藏)",
+        "salary_opp_cost": "薪资信息已隐藏",
         "evidence_summary": {
           "title_score": 30.0,
           "skills_score": 42.0,
@@ -1693,7 +1701,7 @@
         ],
         "note": "AI员工平台(Agent)方向，Agent平台经验仅理解级→冲刺"
       },
-      "salary_gate": "达标(≥38.4万)",
+      "salary_gate": "薪资信息已隐藏",
       "source_class_eff": "B",
       "user_mark": "good",
       "external_interface": {
@@ -1730,24 +1738,25 @@
         "years_required": 3,
         "job_type": "fulltime"
       },
-      "key": "明心数智|AI员工平台产品经理(Agent方向)",
-      "id": "明心数智|AI员工平台产品经理(Agent方向)"
+      "key": "job-014",
+      "id": "job-014",
+      "snippet": "岗位方向：AI员工平台产品经理(Agent方向)；核心能力：AI、Agent、LLM、B端。具体职责与任职要求请打开来源 JD。"
     },
     {
       "title": "产品总监(跨境电商/企业服务B端)",
-      "company": "禾蛙(猎头)",
+      "company": "匿名企业 15",
       "location": "深圳",
       "url": "https://hewa.cn/positionDetails/XZveBaMov_hw3_gFnuoAPSW_hw1_Yg_hw2_.html",
-      "salary": "50-120万",
+      "salary": "薪资面议",
       "date_posted": "2026-07",
       "first_seen": "2026-07-14",
       "status": "existing",
       "sources": [
-        "web"
+        "来源页面 1"
       ],
       "source_urls": [
         {
-          "source": "web",
+          "source": "来源页面 1",
           "url": "https://hewa.cn/positionDetails/XZveBaMov_hw3_gFnuoAPSW_hw1_Yg_hw2_.html"
         }
       ],
@@ -1780,8 +1789,8 @@
         "worth": true,
         "resume_version": "AI产品通用版",
         "channel": "待核验在招后·官方/猎头",
-        "salary_gate": "达标(≥38.4万)",
-        "salary_opp_cost": "总包约85.0万/年≥参考线38.4万→机会成本可接受",
+        "salary_gate": "达标(薪资信息已隐藏)",
+        "salary_opp_cost": "薪资信息已隐藏",
         "evidence_summary": {
           "title_score": 50.0,
           "skills_score": 52.5,
@@ -1806,7 +1815,7 @@
         "critical_missing": [],
         "note": ""
       },
-      "salary_gate": "达标(≥38.4万)",
+      "salary_gate": "薪资信息已隐藏",
       "source_class_eff": "B",
       "user_mark": "",
       "external_interface": {},
@@ -1826,24 +1835,25 @@
         "years_required": 3,
         "job_type": "fulltime"
       },
-      "key": "禾蛙(猎头)|产品总监(跨境电商/企业服务B端)",
-      "id": "禾蛙(猎头)|产品总监(跨境电商/企业服务B端)"
+      "key": "job-015",
+      "id": "job-015",
+      "snippet": "岗位方向：产品总监(跨境电商/企业服务B端)；核心能力：B端、SaaS、AI、产品总监。具体职责与任职要求请打开来源 JD。"
     },
     {
       "title": "AI应用产品经理",
-      "company": "金融壹账通",
+      "company": "匿名企业 16",
       "location": "深圳-福田区",
       "url": "https://m.liepin.com/job/1983514961.shtml",
-      "salary": "12-18k·16薪",
+      "salary": "薪资面议",
       "date_posted": "",
       "first_seen": "2026-07-14",
       "status": "existing",
       "sources": [
-        "金融壹账通|AI应用产品经理"
+        "来源页面 1"
       ],
       "source_urls": [
         {
-          "source": "金融壹账通|AI应用产品经理",
+          "source": "来源页面 1",
           "url": "https://m.liepin.com/job/1983514961.shtml"
         }
       ],
@@ -1873,8 +1883,8 @@
         "worth": false,
         "resume_version": "—",
         "channel": "官方直投 / 猎头推荐",
-        "salary_gate": "偏低(<30万,国内低优先)",
-        "salary_opp_cost": "总包约24.0万/年<30万→国内低优先，机会成本不划算",
+        "salary_gate": "偏低(薪资信息已隐藏,国内低优先)",
+        "salary_opp_cost": "薪资信息已隐藏",
         "evidence_summary": {
           "title_score": 60.0,
           "skills_score": 63.3,
@@ -1909,7 +1919,7 @@
         ],
         "note": ""
       },
-      "salary_gate": "偏低(<30万,国内低优先)",
+      "salary_gate": "薪资信息已隐藏",
       "source_class_eff": "A",
       "user_mark": "",
       "external_interface": {},
@@ -1935,24 +1945,25 @@
         "years_required": "3",
         "job_type": "产品经理"
       },
-      "key": "金融壹账通|ai应用产品经理",
-      "id": "金融壹账通|ai应用产品经理"
+      "key": "job-016",
+      "id": "job-016",
+      "snippet": "岗位方向：AI应用产品经理；核心能力：LLM、Agent、RAG、智能客服。具体职责与任职要求请打开来源 JD。"
     },
     {
       "title": "AI业务产品经理",
-      "company": "货拉拉",
+      "company": "匿名企业 17",
       "location": "深圳-福田区",
       "url": "https://m.liepin.com/job/1983314339.shtml",
-      "salary": "18-25k",
+      "salary": "薪资面议",
       "date_posted": "",
       "first_seen": "2026-07-14",
       "status": "existing",
       "sources": [
-        "货拉拉|AI业务产品经理"
+        "来源页面 1"
       ],
       "source_urls": [
         {
-          "source": "货拉拉|AI业务产品经理",
+          "source": "来源页面 1",
           "url": "https://m.liepin.com/job/1983314339.shtml"
         }
       ],
@@ -1982,8 +1993,8 @@
         "worth": true,
         "resume_version": "AI产品通用版",
         "channel": "官方直投 / 猎头推荐",
-        "salary_gate": "临界(30-38.4万,仅特别匹配考虑)",
-        "salary_opp_cost": "总包约30.1万/年处于30-38.4万临界→仅岗位特别匹配或结构更优才承担机会成本",
+        "salary_gate": "临界(薪资信息已隐藏,仅特别匹配考虑)",
+        "salary_opp_cost": "薪资信息已隐藏",
         "evidence_summary": {
           "title_score": 60.0,
           "skills_score": 56.7,
@@ -2019,7 +2030,7 @@
         ],
         "note": ""
       },
-      "salary_gate": "临界(30-38.4万,仅特别匹配考虑)",
+      "salary_gate": "薪资信息已隐藏",
       "source_class_eff": "B",
       "user_mark": "",
       "external_interface": {},
@@ -2046,24 +2057,25 @@
         "years_required": "3",
         "job_type": "产品经理"
       },
-      "key": "货拉拉|ai业务产品经理",
-      "id": "货拉拉|ai业务产品经理"
+      "key": "job-017",
+      "id": "job-017",
+      "snippet": "岗位方向：AI业务产品经理；核心能力：LLM、Agent、RAG、AI客服。具体职责与任职要求请打开来源 JD。"
     },
     {
       "title": "产品经理（大模型金融场景）",
-      "company": "平安健康保险 / 平安科技-保险通用智能产品部",
+      "company": "匿名企业 18",
       "location": "深圳",
       "url": "https://bebee.com/cn/jobs/job--techmap_cn_4432403567",
-      "salary": "未披露",
+      "salary": "薪资面议",
       "date_posted": "2026-07-14",
       "first_seen": "",
       "status": "existing",
       "sources": [
-        "bebee·平安科技官方"
+        "来源页面 1"
       ],
       "source_urls": [
         {
-          "source": "bebee·平安科技官方",
+          "source": "来源页面 1",
           "url": "https://bebee.com/cn/jobs/job--techmap_cn_4432403567"
         }
       ],
@@ -2094,7 +2106,7 @@
         "resume_version": "AI产品通用版",
         "channel": "官方直投 / 猎头推荐",
         "salary_gate": "待核薪(不优先不扣死)",
-        "salary_opp_cost": "薪资待核，不优先不扣死；核验后据总包判断是否值得机会成本",
+        "salary_opp_cost": "薪资信息已隐藏",
         "evidence_summary": {
           "title_score": 60.0,
           "skills_score": 53.3,
@@ -2130,7 +2142,7 @@
         ],
         "note": ""
       },
-      "salary_gate": "待核薪(不优先不扣死)",
+      "salary_gate": "薪资信息已隐藏",
       "source_class_eff": "A",
       "user_mark": "",
       "external_interface": {},
@@ -2157,24 +2169,25 @@
         "years_required": 3,
         "job_type": "fulltime"
       },
-      "key": "平安健康保险 / 平安科技-保险通用智能产品部|产品经理（大模型金融场景）",
-      "id": "平安健康保险 / 平安科技-保险通用智能产品部|产品经理（大模型金融场景）"
+      "key": "job-018",
+      "id": "job-018",
+      "snippet": "岗位方向：产品经理（大模型金融场景）；核心能力：AI、大模型、金融科技、Prompt工程。具体职责与任职要求请打开来源 JD。"
     },
     {
       "title": "产品经理（AI·保险运营）",
-      "company": "平安健康保险 / 平安产险-健康险事业部",
+      "company": "匿名企业 19",
       "location": "深圳",
       "url": "https://bebee.com/cn/jobs/ai-shenzhen-guangdong--theirstack-687340736",
-      "salary": "未披露",
+      "salary": "薪资面议",
       "date_posted": "2026-07-14",
       "first_seen": "",
       "status": "existing",
       "sources": [
-        "bebee·平安官方"
+        "来源页面 1"
       ],
       "source_urls": [
         {
-          "source": "bebee·平安官方",
+          "source": "来源页面 1",
           "url": "https://bebee.com/cn/jobs/ai-shenzhen-guangdong--theirstack-687340736"
         }
       ],
@@ -2205,7 +2218,7 @@
         "resume_version": "保险纵深版",
         "channel": "官方直投 / 猎头推荐",
         "salary_gate": "待核薪(不优先不扣死)",
-        "salary_opp_cost": "薪资待核，不优先不扣死；核验后据总包判断是否值得机会成本",
+        "salary_opp_cost": "薪资信息已隐藏",
         "evidence_summary": {
           "title_score": 60.0,
           "skills_score": 44.0,
@@ -2241,7 +2254,7 @@
         ],
         "note": ""
       },
-      "salary_gate": "待核薪(不优先不扣死)",
+      "salary_gate": "薪资信息已隐藏",
       "source_class_eff": "A",
       "user_mark": "",
       "external_interface": {},
@@ -2267,24 +2280,25 @@
         "years_required": 2,
         "job_type": "fulltime"
       },
-      "key": "平安健康保险 / 平安产险-健康险事业部|产品经理（ai·保险运营）",
-      "id": "平安健康保险 / 平安产险-健康险事业部|产品经理（ai·保险运营）"
+      "key": "job-019",
+      "id": "job-019",
+      "snippet": "岗位方向：产品经理（AI·保险运营）；核心能力：保险科技、AI、Agent、业务流程重构。具体职责与任职要求请打开来源 JD。"
     },
     {
       "title": "产品经理（AI Agent销售提效工具）",
-      "company": "水滴公司",
+      "company": "匿名企业 20",
       "location": "深圳-南山区",
       "url": "https://m.liepin.com/job/1982409181.shtml",
-      "salary": "20-40k·16薪",
+      "salary": "薪资面议",
       "date_posted": "2026-07-14",
       "first_seen": "",
       "status": "existing",
       "sources": [
-        "猎聘·水滴公司"
+        "来源页面 1"
       ],
       "source_urls": [
         {
-          "source": "猎聘·水滴公司",
+          "source": "来源页面 1",
           "url": "https://m.liepin.com/job/1982409181.shtml"
         }
       ],
@@ -2313,8 +2327,8 @@
         "worth": true,
         "resume_version": "AI产品通用版",
         "channel": "官方直投 / 猎头推荐",
-        "salary_gate": "达标(≥38.4万)",
-        "salary_opp_cost": "总包约48.0万/年≥参考线38.4万→机会成本可接受",
+        "salary_gate": "达标(薪资信息已隐藏)",
+        "salary_opp_cost": "薪资信息已隐藏",
         "evidence_summary": {
           "title_score": 30.0,
           "skills_score": 58.3,
@@ -2348,7 +2362,7 @@
         "critical_missing": [],
         "note": ""
       },
-      "salary_gate": "达标(≥38.4万)",
+      "salary_gate": "薪资信息已隐藏",
       "source_class_eff": "B",
       "user_mark": "",
       "external_interface": {},
@@ -2375,24 +2389,25 @@
         "years_required": 2,
         "job_type": "fulltime"
       },
-      "key": "水滴公司|产品经理（ai agent销售提效工具）",
-      "id": "水滴公司|产品经理（ai agent销售提效工具）"
+      "key": "job-020",
+      "id": "job-020",
+      "snippet": "岗位方向：产品经理（AI Agent销售提效工具）；核心能力：保险科技、AI Agent、销售提效、产品设计。具体职责与任职要求请打开来源 JD。"
     },
     {
       "title": "高级AI产品经理（智能客服/对话式AI）",
-      "company": "青牛智胜（深圳）科技有限公司",
+      "company": "匿名企业 21",
       "location": "深圳-南山区",
       "url": "https://m.liepin.com/job/1982436761.shtml",
-      "salary": "20-35k·13薪",
+      "salary": "薪资面议",
       "date_posted": "2026-07-16",
       "first_seen": "",
       "status": "new",
       "sources": [
-        "猎聘·青牛智胜"
+        "来源页面 1"
       ],
       "source_urls": [
         {
-          "source": "猎聘·青牛智胜",
+          "source": "来源页面 1",
           "url": "https://m.liepin.com/job/1982436761.shtml"
         }
       ],
@@ -2423,8 +2438,8 @@
         "worth": true,
         "resume_version": "AI产品通用版",
         "channel": "官方直投 / 猎头推荐",
-        "salary_gate": "临界(30-38.4万,仅特别匹配考虑)",
-        "salary_opp_cost": "总包约35.8万/年处于30-38.4万临界→仅岗位特别匹配或结构更优才承担机会成本",
+        "salary_gate": "临界(薪资信息已隐藏,仅特别匹配考虑)",
+        "salary_opp_cost": "薪资信息已隐藏",
         "evidence_summary": {
           "title_score": 100.0,
           "skills_score": 44.3,
@@ -2460,7 +2475,7 @@
         ],
         "note": ""
       },
-      "salary_gate": "临界(30-38.4万,仅特别匹配考虑)",
+      "salary_gate": "薪资信息已隐藏",
       "source_class_eff": "B",
       "user_mark": "",
       "external_interface": {},
@@ -2488,24 +2503,25 @@
         "years_required": 5,
         "job_type": "fulltime"
       },
-      "key": "青牛智胜（深圳）科技有限公司|高级ai产品经理（智能客服/对话式ai）",
-      "id": "青牛智胜（深圳）科技有限公司|高级ai产品经理（智能客服/对话式ai）"
+      "key": "job-021",
+      "id": "job-021",
+      "snippet": "岗位方向：高级AI产品经理（智能客服/对话式AI）；核心能力：AI、智能客服、语音交互、ASR/NLP/TTS。具体职责与任职要求请打开来源 JD。"
     },
     {
       "title": "B端系统产品经理（保险代理人工具）",
-      "company": "中国平安人寿保险股份有限公司",
+      "company": "匿名企业 22",
       "location": "深圳（PAFC）",
       "url": "https://www.jrzp.com/job3240379984.shtml",
-      "salary": "20-50K（待确认实际范围）",
+      "salary": "薪资面议",
       "date_posted": "2026-07-16",
       "first_seen": "",
       "status": "new",
       "sources": [
-        "今日招聘·平安人寿官方"
+        "来源页面 1"
       ],
       "source_urls": [
         {
-          "source": "今日招聘·平安人寿官方",
+          "source": "来源页面 1",
           "url": "https://www.jrzp.com/job3240379984.shtml"
         }
       ],
@@ -2536,8 +2552,8 @@
         "worth": true,
         "resume_version": "保险纵深版",
         "channel": "官方直投 / 猎头推荐",
-        "salary_gate": "达标(≥38.4万)",
-        "salary_opp_cost": "总包约49.0万/年≥参考线38.4万→机会成本可接受",
+        "salary_gate": "达标(薪资信息已隐藏)",
+        "salary_opp_cost": "薪资信息已隐藏",
         "evidence_summary": {
           "title_score": 60.0,
           "skills_score": 51.7,
@@ -2573,7 +2589,7 @@
         ],
         "note": ""
       },
-      "salary_gate": "达标(≥38.4万)",
+      "salary_gate": "薪资信息已隐藏",
       "source_class_eff": "A",
       "user_mark": "",
       "external_interface": {},
@@ -2600,29 +2616,30 @@
         "years_required": 3,
         "job_type": "fulltime"
       },
-      "key": "中国平安人寿保险股份有限公司|b端系统产品经理（保险代理人工具）",
-      "id": "中国平安人寿保险股份有限公司|b端系统产品经理（保险代理人工具）"
+      "key": "job-022",
+      "id": "job-022",
+      "snippet": "岗位方向：B端系统产品经理（保险代理人工具）；核心能力：保险科技、B端产品、SaaS、代理人工具。具体职责与任职要求请打开来源 JD。"
     }
   ],
   "refresh_batches": [
     [
       {
-        "id": "腾讯|腾讯云 im",
-        "key": "腾讯|腾讯云 im",
-        "title": "腾讯云 IM-高级产品经理-智能对话（企业客服、营销方向）",
-        "company": "腾讯",
+        "id": "job-023",
+        "key": "job-023",
+        "title": "匿名企业 10云 IM-高级产品经理-智能对话（企业客服、营销方向）",
+        "company": "匿名企业 10",
         "location": "深圳",
         "url": "https://jobs.niuqizp.com/job-vYl55NNnn.html",
-        "salary": "未披露",
+        "salary": "薪资面议",
         "date_posted": "2026-03-02",
         "first_seen": "2026-07-11",
         "status": "existing",
         "sources": [
-          "web"
+          "来源页面 1"
         ],
         "source_urls": [
           {
-            "source": "web",
+            "source": "来源页面 1",
             "url": "https://jobs.niuqizp.com/job-vYl55NNnn.html"
           }
         ],
@@ -2670,7 +2687,7 @@
           "resume_version": "AI产品通用版",
           "channel": "官方直投 / 猎头推荐",
           "salary_gate": "待核薪(不优先不扣死)",
-          "salary_opp_cost": "薪资待核，不优先不扣死；核验后据总包判断是否值得机会成本",
+          "salary_opp_cost": "薪资信息已隐藏",
           "evidence_summary": {
             "title_score": 100.0,
             "skills_score": 62.9,
@@ -2711,7 +2728,7 @@
           ],
           "note": "英语工作语言为硬门槛(缺失)+岗位国际化新鲜度不足；AI客服方向契合但需补英语/海外项目经验→自strong降冲刺"
         },
-        "salary_gate": "待核薪(不优先不扣死)",
+        "salary_gate": "薪资信息已隐藏",
         "source_class_eff": "B",
         "user_mark": "bad",
         "external_interface": {},
@@ -2739,25 +2756,25 @@
           "years_required": 3,
           "job_type": "fulltime"
         },
-        "snippet": "全职。负责企业客服/营销智能对话产品的规划、全流程设计、效果评估及商业化；要求3年以上To B产品经验，理解LLM、Agent、RAG，并能将技术方案转化为产品功能；英语可作为工作语言。（复核 2026-07-12：牛企直聘 active，来源腾讯官网）"
+        "snippet": "岗位方向：匿名企业 10云 IM-高级产品经理-智能对话（企业客服、营销方向）；核心能力：企业客服、营销、LLM、Agent。具体职责与任职要求请打开来源 JD。"
       },
       {
-        "id": "中国平安|产品经理（企业宝）",
-        "key": "中国平安|产品经理（企业宝）",
+        "id": "job-024",
+        "key": "job-024",
         "title": "产品经理（企业宝）",
-        "company": "中国平安",
+        "company": "匿名企业 08",
         "location": "深圳",
         "url": "https://watchjobs.net/zh/explore/job/B40761DD9F3249C783732DCE69F29F13/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86-%E4%BC%81%E4%B8%9A%E5%AE%9D-%E4%B8%AD%E5%9B%BD%E5%B9%B3%E5%AE%89",
-        "salary": "未披露",
+        "salary": "薪资面议",
         "date_posted": "",
         "first_seen": "2026-07-11",
         "status": "existing",
         "sources": [
-          "web"
+          "来源页面 1"
         ],
         "source_urls": [
           {
-            "source": "web",
+            "source": "来源页面 1",
             "url": "https://watchjobs.net/zh/explore/job/B40761DD9F3249C783732DCE69F29F13/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86-%E4%BC%81%E4%B8%9A%E5%AE%9D-%E4%B8%AD%E5%9B%BD%E5%B9%B3%E5%AE%89"
           }
         ],
@@ -2803,7 +2820,7 @@
           "resume_version": "AI产品通用版",
           "channel": "官方直投 / 猎头推荐",
           "salary_gate": "待核薪(不优先不扣死)",
-          "salary_opp_cost": "薪资待核，不优先不扣死；核验后据总包判断是否值得机会成本",
+          "salary_opp_cost": "薪资信息已隐藏",
           "evidence_summary": {
             "title_score": 60.0,
             "skills_score": 46.7,
@@ -2838,7 +2855,7 @@
           ],
           "note": "企业客户服务体系+保险销售转化契合；可扩展Agent架构为优先项，补强即可投"
         },
-        "salary_gate": "待核薪(不优先不扣死)",
+        "salary_gate": "薪资信息已隐藏",
         "source_class_eff": "B",
         "user_mark": "bad",
         "external_interface": {},
@@ -2864,27 +2881,27 @@
           "years_required": null,
           "job_type": "fulltime"
         },
-        "snippet": "负责企业客户服务体系及AI数字员工规划落地；牵头面客AI产品，设计可扩展Agent架构，覆盖健康问诊、理赔咨询、保险销售等能力；优先B端企业服务与保险销售复合背景、成功AI项目经验。"
+        "snippet": "岗位方向：产品经理（企业宝）；核心能力：企业服务、客户服务、保险销售、AI数字员工。具体职责与任职要求请打开来源 JD。"
       }
     ],
     [
       {
-        "id": "探迹|高级产品经理（智能呼叫/b端）",
-        "key": "探迹|高级产品经理（智能呼叫/b端）",
+        "id": "job-025",
+        "key": "job-025",
         "title": "高级产品经理（智能呼叫/B端）",
-        "company": "探迹",
+        "company": "匿名企业 23",
         "location": "深圳龙岗",
         "url": "https://m.zhipin.com/zhaopin/0e913122133218fe03J-0t60Eg~~/",
-        "salary": "18-29K·14薪",
+        "salary": "薪资面议",
         "date_posted": "",
         "first_seen": "2026-07-11",
         "status": "existing",
         "sources": [
-          "zhipin"
+          "来源页面 1"
         ],
         "source_urls": [
           {
-            "source": "zhipin",
+            "source": "来源页面 1",
             "url": "https://m.zhipin.com/zhaopin/0e913122133218fe03J-0t60Eg~~/"
           }
         ],
@@ -2914,8 +2931,8 @@
           "worth": true,
           "resume_version": "AI产品通用版",
           "channel": "待核验在招后·官方/猎头",
-          "salary_gate": "临界(30-38.4万,仅特别匹配考虑)",
-          "salary_opp_cost": "总包约32.9万/年处于30-38.4万临界→仅岗位特别匹配或结构更优才承担机会成本",
+          "salary_gate": "临界(薪资信息已隐藏,仅特别匹配考虑)",
+          "salary_opp_cost": "薪资信息已隐藏",
           "evidence_summary": {
             "title_score": 60.0,
             "skills_score": 30.0,
@@ -2929,30 +2946,30 @@
           "critical_missing": [],
           "note": ""
         },
-        "salary_gate": "临界(30-38.4万,仅特别匹配考虑)",
+        "salary_gate": "薪资信息已隐藏",
         "source_class_eff": "B",
         "user_mark": "bad",
         "external_interface": {},
         "jd": null,
-        "snippet": "3-5年、本科，18-29K·14薪。智能呼叫/B端方向，要求调研用户、数据分析、产品长期规划与迭代。 【复核 2026-07-14：猎聘/Boss验证码墙，无法自动核验，需手动确认】"
+        "snippet": "岗位方向：高级产品经理（智能呼叫/B端）；核心能力：产品规划与跨团队落地。具体职责与任职要求请打开来源 JD。"
       },
       {
-        "id": "猎聘匿名线索 77592415（待反查）|crm产品经理",
-        "key": "猎聘匿名线索 77592415（待反查）|crm产品经理",
+        "id": "job-026",
+        "key": "job-026",
         "title": "CRM产品经理",
-        "company": "猎聘匿名线索 77592415（待反查）",
+        "company": "匿名企业 24",
         "location": "深圳",
         "url": "https://www.liepin.com/a/77592415.shtml?mscid=soai_pc_001",
-        "salary": "30-50K·15薪",
+        "salary": "薪资面议",
         "date_posted": "",
         "first_seen": "2026-07-11",
         "status": "existing",
         "sources": [
-          "liepin_anonymous"
+          "来源页面 1"
         ],
         "source_urls": [
           {
-            "source": "liepin_anonymous",
+            "source": "来源页面 1",
             "url": "https://www.liepin.com/a/77592415.shtml?mscid=soai_pc_001"
           }
         ],
@@ -2991,8 +3008,8 @@
           "worth": false,
           "resume_version": "—",
           "channel": "仅作线索",
-          "salary_gate": "达标(≥38.4万)",
-          "salary_opp_cost": "总包约60.0万/年≥参考线38.4万→机会成本可接受",
+          "salary_gate": "达标(薪资信息已隐藏)",
+          "salary_opp_cost": "薪资信息已隐藏",
           "evidence_summary": {
             "title_score": 90.0,
             "skills_score": 86.7,
@@ -3015,9 +3032,9 @@
           ],
           "preferred": [],
           "critical_missing": [],
-          "note": "CRM产品经理(深圳,30-50K·15薪)需英语作为工作语言(硬门槛缺失)→即使反查实名也难投；维持仅作线索"
+          "note": "CRM产品经理(深圳,薪资信息已隐藏)需英语作为工作语言(硬门槛缺失)→即使反查实名也难投；维持仅作线索"
         },
-        "salary_gate": "达标(≥38.4万)",
+        "salary_gate": "薪资信息已隐藏",
         "source_class_eff": "C",
         "user_mark": "bad",
         "external_interface": {},
@@ -3036,27 +3053,27 @@
           "years_required": 5,
           "job_type": "fulltime"
         },
-        "snippet": "猎聘匿名猎头线索；深圳世界500强百货公司；30-50K·15薪；5-10年；CRM产品方向。 【复核 2026-07-14：活(7/7更新). 出海电商卖家CRM,30-50k·15薪,B端但偏出海电商,猎头匿名】"
+        "snippet": "岗位方向：CRM产品经理；核心能力：CRM、客户经营、B端产品。具体职责与任职要求请打开来源 JD。"
       }
     ],
     [
       {
-        "id": "顺丰|高级产品经理（跨境解决方案方向）",
-        "key": "顺丰|高级产品经理（跨境解决方案方向）",
+        "id": "job-027",
+        "key": "job-027",
         "title": "高级产品经理（跨境解决方案方向）",
-        "company": "顺丰",
+        "company": "匿名企业 25",
         "location": "深圳南山",
         "url": "https://www.liepin.com/job/1983946703.shtml?mscid=soai_pc_001",
-        "salary": "25-45K·14薪",
+        "salary": "薪资面议",
         "date_posted": "",
         "first_seen": "2026-07-11",
         "status": "existing",
         "sources": [
-          "liepin"
+          "来源页面 1"
         ],
         "source_urls": [
           {
-            "source": "liepin",
+            "source": "来源页面 1",
             "url": "https://www.liepin.com/job/1983946703.shtml?mscid=soai_pc_001"
           }
         ],
@@ -3093,8 +3110,8 @@
           "worth": true,
           "resume_version": "AI产品通用版",
           "channel": "官方直投 / 猎头推荐",
-          "salary_gate": "达标(≥38.4万)",
-          "salary_opp_cost": "总包约49.0万/年≥参考线38.4万→机会成本可接受",
+          "salary_gate": "达标(薪资信息已隐藏)",
+          "salary_opp_cost": "薪资信息已隐藏",
           "evidence_summary": {
             "title_score": 60.0,
             "skills_score": 50.0,
@@ -3119,7 +3136,7 @@
           "critical_missing": [],
           "note": ""
         },
-        "salary_gate": "达标(≥38.4万)",
+        "salary_gate": "薪资信息已隐藏",
         "source_class_eff": "B",
         "user_mark": "bad",
         "external_interface": {},
@@ -3138,25 +3155,25 @@
           "years_required": 3,
           "job_type": "fulltime"
         },
-        "snippet": "猎聘公司实名职位；25-45K·14薪；3年以上；邮政快递行业。跨境解决方案产品方向。 【复核 2026-07-14：活(7/7更新). 跨境供应链金融产品,B端金融但偏跨境非保险,25-45k·14薪,顺丰数科】"
+        "snippet": "岗位方向：高级产品经理（跨境解决方案方向）；核心能力：解决方案、业务流程、B端产品。具体职责与任职要求请打开来源 JD。"
       },
       {
-        "id": "徕芬科技|AI客服产品经理",
-        "key": "徕芬科技|AI客服产品经理",
+        "id": "job-028",
+        "key": "job-028",
         "title": "AI客服产品经理",
-        "company": "徕芬科技",
+        "company": "匿名企业 26",
         "location": "深圳南山区",
         "url": "https://m.liepin.com/job/1982982875.shtml",
-        "salary": "20-45K·14薪",
+        "salary": "薪资面议",
         "date_posted": "2026-05-29",
         "first_seen": "2026-07-11",
         "status": "existing",
         "sources": [
-          "liepin"
+          "来源页面 1"
         ],
         "source_urls": [
           {
-            "source": "liepin",
+            "source": "来源页面 1",
             "url": "https://m.liepin.com/job/1982982875.shtml"
           }
         ],
@@ -3167,7 +3184,7 @@
         "recommendation": "apply",
         "strengths": [
           "AI客服全生命周期经验直接匹配",
-          "知识库/工单/人机协作与微保项目高度同构",
+          "知识库/工单/人机协作与[企业名称已隐藏]项目高度同构",
           "量化效率提升与满意度数据"
         ],
         "weaknesses": [
@@ -3200,8 +3217,8 @@
           "worth": true,
           "resume_version": "AI产品通用版",
           "channel": "待核验在招后·官方/猎头",
-          "salary_gate": "达标(≥38.4万)",
-          "salary_opp_cost": "总包约45.5万/年≥参考线38.4万→机会成本可接受",
+          "salary_gate": "达标(薪资信息已隐藏)",
+          "salary_opp_cost": "薪资信息已隐藏",
           "evidence_summary": {
             "title_score": 100.0,
             "skills_score": 58.0,
@@ -3235,7 +3252,7 @@
           ],
           "note": "AI客服(知识库/工单/人机协作)高度契合，但未核验在招(captcha墙)；核验后升主攻"
         },
-        "salary_gate": "达标(≥38.4万)",
+        "salary_gate": "薪资信息已隐藏",
         "source_class_eff": "B",
         "user_mark": "bad",
         "external_interface": {},
@@ -3259,7 +3276,7 @@
           "years_required": 5,
           "job_type": "fulltime"
         },
-        "snippet": "AI客服产品全生命周期；知识库/工单协同/人机协作；AI工具推广与运营 【复核 2026-07-14：猎聘验证码墙(行为异常),无法自动核验,需手动确认】"
+        "snippet": "岗位方向：AI客服产品经理；核心能力：AI客服、知识库、工单协同、人机协作。具体职责与任职要求请打开来源 JD。"
       }
     ]
   ]
