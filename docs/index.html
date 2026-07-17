@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Job Matcher · 脱敏演示</title>
+  <style>
+    :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #f5f7fb; color: #1f2937; }
+    header { background: #111827; color: white; padding: 20px 28px; }
+    header h1 { margin: 0 0 6px; font-size: 22px; }
+    header p { margin: 0; color: #cbd5e1; font-size: 13px; }
+    main { display: grid; grid-template-columns: minmax(300px, 38%) 1fr; min-height: calc(100vh - 92px); }
+    aside { background: white; border-right: 1px solid #e5e7eb; padding: 18px; }
+    .toolbar { display: flex; gap: 8px; margin-bottom: 14px; }
+    button { border: 0; border-radius: 7px; padding: 9px 13px; cursor: pointer; font-size: 13px; }
+    button.primary { background: #2563eb; color: white; }
+    button.secondary { background: #e5e7eb; color: #374151; }
+    #status { min-height: 20px; color: #64748b; font-size: 12px; margin-bottom: 12px; }
+    .summary { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+    .pill { background: #eef2ff; color: #4338ca; padding: 5px 9px; border-radius: 999px; font-size: 12px; }
+    .pill.new { background: #dcfce7; color: #15803d; }
+    .job-list { display: grid; gap: 9px; }
+    .job { position: relative; padding: 13px; border: 1px solid #e5e7eb; border-radius: 10px; background: #fff; cursor: pointer; }
+    .job:hover, .job.selected { border-color: #93c5fd; box-shadow: 0 4px 14px #dbeafe; }
+    .job h3 { margin: 0 0 5px; font-size: 14px; padding-right: 48px; }
+    .job .company { color: #64748b; font-size: 12px; }
+    .job .meta { color: #475569; font-size: 12px; margin-top: 8px; }
+    .badge { position: absolute; top: 11px; right: 11px; padding: 3px 6px; border-radius: 5px; font-size: 10px; font-weight: 700; }
+    .badge.new { background: #dcfce7; color: #15803d; }
+    .score { float: right; color: #2563eb; font-weight: 700; }
+    section.detail { padding: 30px; }
+    .empty { color: #94a3b8; margin-top: 70px; text-align: center; }
+    .detail-card { max-width: 760px; background: white; border-radius: 14px; padding: 25px; box-shadow: 0 4px 18px #e2e8f0; }
+    .detail-card h2 { margin: 0 0 7px; font-size: 24px; }
+    .detail-card .sub { color: #64748b; margin-bottom: 22px; }
+    .detail-card h4 { margin: 20px 0 8px; font-size: 13px; color: #475569; }
+    ul { margin: 6px 0; padding-left: 20px; line-height: 1.8; font-size: 13px; }
+    .notice { margin-top: 20px; padding: 10px 12px; background: #eff6ff; color: #1d4ed8; border-radius: 8px; font-size: 12px; }
+    .source-note { margin: 0 0 12px; color: #64748b; font-size: 12px; line-height: 1.6; }
+    @media (max-width: 760px) { main { display: block; } aside { border-right: 0; border-bottom: 1px solid #e5e7eb; } section.detail { padding: 18px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Job Matcher Demo</h1>
+    <p>GitHub Pages 脱敏演示版 · 增量去重 · NEW 标签 · 无需本地服务或 LLM</p>
+  </header>
+  <main>
+    <aside>
+      <div class="toolbar">
+        <button id="refresh" class="primary">刷新岗位</button>
+        <button id="reset" class="secondary">重置演示</button>
+      </div>
+      <p class="source-note">这是一个可公开展示的静态 Demo。岗位均为虚构数据；刷新按钮在浏览器内模拟获取下一批岗位。</p>
+      <div id="status"></div>
+      <div class="summary">
+        <span id="new-count" class="pill new">新增 0</span>
+        <span id="total-count" class="pill">共 0 个职位</span>
+      </div>
+      <div id="jobs" class="job-list"></div>
+    </aside>
+    <section class="detail">
+      <div id="detail" class="empty">选择左侧岗位查看详情</div>
+    </section>
+  </main>
+  <script>
+    // The public page intentionally embeds only fake jobs. The production app
+    // replaces this fixture with Liepin/BOSS/MCP/API adapters on the server.
+    const fixture = {
+      seed: [
+        { id: "seed-001", title: "AI 客服产品经理", company: "示例智能服务公司", location: "深圳", salary: "30-45K·14薪", source: "mock-source", score: 88, recommendation: "apply", strengths: ["智能客服工作台经验可迁移", "有 B 端流程和人机协同经验"], gaps: ["需核验语音交互经验"] },
+        { id: "seed-002", title: "销售提效产品经理", company: "示例企业服务公司", location: "深圳", salary: "28-42K·16薪", source: "mock-source", score: 84, recommendation: "apply", strengths: ["客户经营和任务编排经验", "有可量化业务结果"], gaps: ["Agent 平台经验需要补充"] },
+        { id: "seed-003", title: "保险科技业务产品经理", company: "示例保险科技公司", location: "深圳", salary: "25-40K·14薪", source: "mock-source", score: 81, recommendation: "apply", strengths: ["保险业务理解直接匹配", "熟悉流程数字化和运营配置"], gaps: ["需确认具体业务线"] },
+        { id: "seed-004", title: "企业 AI 应用产品经理", company: "示例数字化公司", location: "广州/深圳", salary: "25-38K·14薪", source: "mock-source", score: 76, recommendation: "stretch", strengths: ["有流程自动化和 AI 工作流实践"], gaps: ["企业级 Agent 平台经验较少"] }
+      ],
+      batches: [
+        [
+          { id: "seed-002", title: "销售提效产品经理", company: "示例企业服务公司", location: "深圳", salary: "28-42K·16薪", source: "mock-source", score: 84, recommendation: "apply", strengths: ["客户经营和任务编排经验", "有可量化业务结果"], gaps: ["Agent 平台经验需要补充"] },
+          { id: "new-005", title: "AI 保险运营产品经理", company: "示例健康险科技公司", location: "深圳", salary: "30-50K·14薪", source: "mock-refresh-1", score: 82, recommendation: "apply", strengths: ["保险运营和 AI 应用方向匹配"], gaps: ["需确认 Agent 落地深度"] }
+        ],
+        [
+          { id: "seed-003", title: "保险科技业务产品经理", company: "示例保险科技公司", location: "深圳", salary: "25-40K·14薪", source: "mock-source", score: 81, recommendation: "apply", strengths: ["保险业务理解直接匹配", "熟悉流程数字化和运营配置"], gaps: ["需确认具体业务线"] },
+          { id: "new-006", title: "智能作业平台产品经理", company: "示例 B 端平台公司", location: "深圳", salary: "32-48K·15薪", source: "mock-refresh-2", score: 86, recommendation: "apply", strengths: ["作业平台和规则编排经验匹配"], gaps: ["需要了解客户试点职责"] }
+        ],
+        [
+          { id: "new-007", title: "AI Agent 业务产品经理", company: "示例智能工作流公司", location: "远程/深圳", salary: "35-55K·14薪", source: "mock-refresh-3", score: 74, recommendation: "stretch", strengths: ["有工作流编排和人机协同实践"], gaps: ["缺少企业级 Agent 平台规模化案例"] }
+        ]
+      ]
+    };
+
+    let jobs = []; let batchIndex = 0; let selectedId = null;
+    const $ = (id) => document.getElementById(id);
+    const esc = (value) => String(value ?? "").replace(/[&<>\"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" }[ch]));
+    const clone = (value) => JSON.parse(JSON.stringify(value));
+
+    function merge(incoming) {
+      jobs = jobs.map((job) => ({ ...job, status: "existing" }));
+      const byId = new Map(jobs.map((job) => [job.id, job]));
+      incoming.forEach((candidate) => {
+        if (byId.has(candidate.id)) Object.assign(byId.get(candidate.id), { ...candidate, status: "existing" });
+        else { const job = { ...candidate, status: "new" }; jobs.push(job); byId.set(job.id, job); }
+      });
+    }
+
+    function render() {
+      const fresh = jobs.filter((job) => job.status === "new");
+      $("new-count").textContent = `新增 ${fresh.length}`;
+      $("total-count").textContent = `共 ${jobs.length} 个职位`;
+      $("jobs").innerHTML = jobs.map((job) => `
+        <article class="job ${job.id === selectedId ? "selected" : ""}" data-id="${esc(job.id)}">
+          ${job.status === "new" ? '<span class="badge new">NEW</span>' : ""}
+          <h3>${esc(job.title)} <span class="score">${esc(job.score)}</span></h3>
+          <div class="company">${esc(job.company)} · ${esc(job.location)}</div>
+          <div class="meta">${esc(job.salary)} · ${esc(job.recommendation)}</div>
+        </article>`).join("");
+      document.querySelectorAll(".job").forEach((el) => el.addEventListener("click", () => { selectedId = el.dataset.id; render(); renderDetail(jobs.find((job) => job.id === selectedId)); }));
+      if (selectedId && jobs.some((job) => job.id === selectedId)) renderDetail(jobs.find((job) => job.id === selectedId));
+      else if (jobs.length) { selectedId = jobs[0].id; renderDetail(jobs[0]); }
+    }
+
+    function renderDetail(job) {
+      if (!job) { $("detail").className = "empty"; $("detail").textContent = "选择左侧岗位查看详情"; return; }
+      $("detail").className = "detail-card";
+      $("detail").innerHTML = `<h2>${esc(job.title)}</h2><div class="sub">${esc(job.company)} · ${esc(job.location)} · ${esc(job.salary)}</div><h4>匹配优势</h4><ul>${(job.strengths || []).map((item) => `<li>${esc(item)}</li>`).join("")}</ul><h4>待核验/待补充</h4><ul>${(job.gaps || []).map((item) => `<li>${esc(item)}</li>`).join("")}</ul><div class="notice">来源：${esc(job.source)} · 当前状态：${job.status === "new" ? "本次新增" : "历史职位"}</div>`;
+    }
+
+    function reset() { jobs = clone(fixture.seed).map((job) => ({ ...job, status: "new" })); batchIndex = 0; selectedId = null; $("status").textContent = "已重置为演示初始数据"; render(); }
+    function refresh() {
+      if (batchIndex >= fixture.batches.length) { $("status").textContent = "演示批次已用完；点击“重置演示”重新开始"; return; }
+      merge(clone(fixture.batches[batchIndex++]));
+      $("status").textContent = `刷新完成 · 第 ${batchIndex} 次 · 旧标签已清除，新职位标记为 NEW`;
+      render();
+    }
+    $("refresh").addEventListener("click", refresh); $("reset").addEventListener("click", reset); reset();
+  </script>
+</body>
+</html>

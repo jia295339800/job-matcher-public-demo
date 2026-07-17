@@ -22,6 +22,8 @@ python app/server.py
 
 然后打开 <http://127.0.0.1:8765>。
 
+仓库的 `docs/` 目录还包含一个无需后端的 GitHub Pages 静态演示版。发布后直接打开 Pages 链接即可使用“刷新岗位”和“重置演示”，不需要安装 Python、运行命令或配置 LLM。
+
 演示流程：
 
 1. 页面初始展示种子岗位；
@@ -35,6 +37,8 @@ python app/server.py
 app/
   server.py          # 本地 HTTP 服务、模拟检索和增量合并
   static/index.html  # 前端页面与刷新按钮
+docs/
+  index.html         # GitHub Pages 静态演示版（内置脱敏 fixture）
 data/
   seed_jobs.json     # 脱敏模拟职位和模拟刷新批次
 tests/
